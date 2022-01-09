@@ -11,12 +11,12 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="200dp"
+        android:contentDescription="imgDesc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="imgDesc" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textViewQuestion"
@@ -126,22 +126,23 @@
         app:lottie_loop="false"
         app:lottie_rawRes="@raw/cancelled"
         />
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie_layer_name2"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_loop="false"
-        app:lottie_rawRes="@raw/complete"
-        />
+        app:lottie_rawRes="@raw/complete" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginBottom="464dp"
+        android:layout_marginBottom="452dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

@@ -8,12 +8,15 @@ import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     Button butt2;
     Button butt3;
     Button butt4;
-    Helper dbHelper = new Helper(MainActivity.this,null,1);
+    Helper dbHelper = new Helper(MainActivity.this, null, 1);
     SQLiteDatabase db;
     List<QuestionAndAnswer> QaA = new ArrayList<QuestionAndAnswer>();
     String pAns;
@@ -72,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
         progress_bar = (LottieAnimationView) findViewById(R.id.progress_bar);
 
 
-
-
         //json parse
         dbHelper.DeleteAllQuestion();
         try {
@@ -107,42 +107,74 @@ public class MainActivity extends AppCompatActivity {
                 String bait3 = jsonObject.getString("bait3");
                 String diff = jsonObject.getString("diff");
                 String ans = jsonObject.getString("ans");
+                String topic = jsonObject.getString("topic");
 
-                String[] baits ={bait1,bait2,bait3};
+                String[] baits = {bait1, bait2, bait3};
 
                 try {
-                    dbHelper.addQuestion(content,bait1,bait2,bait3,ans,diff);
-                    QaA.add(new QuestionAndAnswer(content,baits,ans,diff));
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(MainActivity.this,"data error",Toast.LENGTH_SHORT).show();
+                    dbHelper.addQuestion(content, bait1, bait2, bait3, ans, diff);
+                    int img;
+                    switch (topic) {
+                        case "Âm Nhạc":
+                            img = R.drawable.music;
+                            break;
+                        case "mrdam":
+                            img = R.drawable.damvinhhung;
+                            break;
+                        case "Văn Hóa":
+                            img = R.drawable.van_hoa;
+                            break;
+                        case "Ca Dao Tục Ngữ":
+                            img = R.drawable.treodebancho;
+                            break;
+                        case "Đời Sống":
+                            img = R.drawable.hats;
+                            break;
+                        case "Ẩm Thực":
+                            img = R.drawable.food;
+                            break;
+                        case "Cổ Tích":
+                            img = R.drawable.fairy_tale;
+                            break;
+                        case "Địa Lý":
+                            img = R.drawable.georaphy;
+                            break;
+                        case "Lịch Sử":
+                            img = R.drawable.history;
+                            break;
+                        case "Văn Học":
+                            img = R.drawable.shakespeare;
+                            break;
+                        default:
+                            img = R.drawable.ic_launcher_foreground;
+                    }
+
+
+                    QaA.add(new QuestionAndAnswer(content, baits, ans, diff, img));
+                } catch (Exception e) {
+                    Toast.makeText(MainActivity.this, "data error", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
 
             }
         } catch (JSONException e) {
-            Toast.makeText(MainActivity.this,"parse error",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "parse error", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
 
         try {
             db = dbHelper.getWritableDatabase();
-        }
-        catch (SQLException exception){
+        } catch (SQLException exception) {
             db = dbHelper.getReadableDatabase();
         }
 
 
-        List<Button> butt =new ArrayList<Button>();
+        List<Button> butt = new ArrayList<Button>();
 
         //random
 
 
-
-
         randomLoadQuest(butt);
-
 
 
         butt1.setOnClickListener(new View.OnClickListener() {
@@ -183,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationStart(Animator animation) {
                 incorrect.setVisibility(View.VISIBLE);
+                banner.setImageResource(android.R.color.transparent);
             }
 
             @Override
@@ -205,6 +238,8 @@ public class MainActivity extends AppCompatActivity {
         correct.addAnimatorListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
+                MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.sfx_point);
+                mp.start();
                 correct.setVisibility(View.VISIBLE);
                 incorrect.setVisibility(View.GONE);
                 incorrect.clearAnimation();
@@ -217,6 +252,7 @@ public class MainActivity extends AppCompatActivity {
                 randomLoadQuest(butt);
                 buttonEffect();
                 progress_bar.playAnimation();
+
             }
 
             @Override
@@ -256,11 +292,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
 
 
-    public void randomLoadQuest(List<Button> butt){
+    public void randomLoadQuest(List<Button> butt) {
         Random rand = new Random();
         int upperbound = QaA.size();
         int quest_random = rand.nextInt(upperbound);
@@ -270,30 +305,26 @@ public class MainActivity extends AppCompatActivity {
         butt.add(butt3);
         butt.add(butt4);
         int remain = 4;
-        for (int i = 0;i <4;i++)
-        {
-            int butt_random=rand.nextInt(remain);
-            if (butt.size()>1)
-            {
+        for (int i = 0; i < 4; i++) {
+            int butt_random = rand.nextInt(remain);
+            if (butt.size() > 1) {
                 butt.get(butt_random).setText(QaA.get(quest_random).getBaits()[i]);
                 butt.remove(butt_random);
-            }
-            else {
+            } else {
                 butt.get(butt_random).setText(QaA.get(quest_random).getAnswer());
             }
             Question.setText(QaA.get(quest_random).getQuestion());
-            remain-=1;
+            banner.setBackgroundResource(QaA.get(quest_random).getImgDescription());
+            remain -= 1;
         }
         quest_chosen = quest_random;
     }
 
 
+    public void check(int quest_random, Button b) {
+        if (pAns.equals(QaA.get(quest_random).getAnswer())) {
 
-
-    public void check(int quest_random,Button b) {
-        if (pAns.equals(QaA.get(quest_random).getAnswer())){
-
-            Animation anim= AnimationUtils.loadAnimation(MainActivity.this,R.anim.bounce);
+            Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bounce);
             b.startAnimation(anim);
             b.setBackgroundColor(Color.parseColor("#45ff54"));
             correct.setVisibility(View.VISIBLE);
@@ -301,9 +332,8 @@ public class MainActivity extends AppCompatActivity {
 
             progress_bar.cancelAnimation();
             progress_bar.clearAnimation();
-        }
-        else {
-            Animation animation = AnimationUtils.loadAnimation(MainActivity.this,R.anim.blink_anim);
+        } else {
+            Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.blink_anim);
             b.startAnimation(animation);
             b.setBackgroundColor(Color.parseColor("#e35242"));
             incorrect.setVisibility(View.VISIBLE);
@@ -311,7 +341,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-    public void buttonEffect(){
+
+    public void buttonEffect() {
         butt1.setBackgroundColor(Color.parseColor("#FFA8A8A8"));
         butt2.setBackgroundColor(Color.parseColor("#FFA8A8A8"));
         butt3.setBackgroundColor(Color.parseColor("#FFA8A8A8"));
@@ -321,6 +352,52 @@ public class MainActivity extends AppCompatActivity {
         butt2.clearAnimation();
         butt3.clearAnimation();
         butt4.clearAnimation();
+
+        Animation fadeIn = AnimationUtils.loadAnimation(MainActivity.this, R.anim.fadein);
+        Animation fadeInS = AnimationUtils.loadAnimation(MainActivity.this, R.anim.fadeinslow);
+        Question.startAnimation(fadeIn);
+        banner.startAnimation(fadeInS);
+
+        Animation leftToRight = AnimationUtils.loadAnimation(MainActivity.this, R.anim.lefttoright);
+        butt1.startAnimation(leftToRight);
+        butt2.startAnimation(leftToRight);
+        butt3.startAnimation(leftToRight);
+        butt4.startAnimation(leftToRight);
+
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+
+        leftToRight.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
 
     }
 }
