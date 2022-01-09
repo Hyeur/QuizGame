@@ -238,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
         correct.addAnimatorListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
-                MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.sfx_point);
+                MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.correct_answer_sound_effect);
                 mp.start();
                 correct.setVisibility(View.VISIBLE);
                 incorrect.setVisibility(View.GONE);
