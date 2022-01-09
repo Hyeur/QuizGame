@@ -1,0 +1,229 @@
+{
+  "question" : [
+    {
+      "content": "Điền chữ còn thiếu: Treo đầu dê, bán thịt ...",
+      "bait1" : "Cừu",
+      "bait2": "Cầy",
+      "bait3": "Cẩu",
+      "ans": "Chó",
+      "diff": "1",
+      "topic": "Ca Dao Tục Ngữ"
+    },
+    {
+      "content": "Điền vào chỗ trống: Ăn chưa no, … chưa tới",
+      "bait1" : "Đâm",
+      "bait2": "Đo",
+      "bait3": "Cho",
+      "ans": "Lo",
+      "diff": "1",
+      "topic": "Ca Dao Tục Ngữ"
+    },
+    {
+      "content": "Trong phả hệ gia đình, một người đàn ông có một người con trai, mà người đàn ông đó là chú của bố. Vậy con trai của bố sẽ xưng hô thế nào với con trai của người đàn ông?",
+      "bait1" : "Anh",
+      "bait2": "Bác",
+      "bait3": "Ông",
+      "ans": "Chú",
+      "diff": "1",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Đâu là bài hát nổi tiếng của ca sĩ Đàm Vĩnh Hưng?",
+      "bait1" : "Ta lằng",
+      "bait2": "Mắt nai",
+      "bait3": "Anh nhà ở đâu thế?",
+      "ans": "Lâu đài tình ái",
+      "diff": "1",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Đâu là tên một loại mũ?",
+      "bait1" : "Lưỡi hái",
+      "bait2": "Lưỡi lê",
+      "bait3": "Lưỡi rắn",
+      "ans": "Lưỡi trai",
+      "diff": "1",
+      "topic": "Đời Sống"
+    },
+    {
+      "content": "Người ta thường nấu canh chua với thứ gì?",
+      "bait1" : "củ cải",
+      "bait2": "rau đay",
+      "bait3": "súp lơ xanh",
+      "ans": "cà chua",
+      "diff": "1",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "“Bu” là gì?",
+      "bait1" : "Một loại khóa",
+      "bait2": "Một điệu hát",
+      "bait3": "Một loại công cụ làm nông",
+      "ans": "Mẹ",
+      "diff": "1",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Thính được làm từ gì?",
+      "bait1" : "Mía",
+      "bait2": "Thịt",
+      "bait3": "Củ cải",
+      "ans": "Gạo",
+      "diff": "1",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Bảy chú lùn trong truyện cổ tích “Nàng Bạch Tuyết và bảy chú lùn” làm nghề gì?",
+      "bait1" : "Thợ rèn",
+      "bait2": "Thợ săn",
+      "bait3": "Thợ may",
+      "ans": "Thợ mỏ",
+      "diff": "1",
+      "topic": "Cổ Tích"
+    },
+    {
+      "content": "Đâu là tên một loại bánh Huế?",
+      "bait1" : "Sướng",
+      "bait2": "Thích",
+      "bait3": "Vui",
+      "ans": "Khoái",
+      "diff": "1",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Văn hóa mặc của người Việt cổ là:",
+      "bait1" : "mặc váy, áo ngắn",
+      "bait2": "có tục xăm mình, để tóc dài",
+      "bait3": "cởi trần, đóng khố, có tục xăm mình",
+      "ans": "Đàn ông cởi trần, đóng khố. Đàn bà mặc váy, áo ngắn",
+      "diff": "2",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Điền vào chỗ trống: “Ăn kĩ no …,cày sâu tốt lúa.”",
+      "bait1" : "Mau",
+      "bait2": "Nhanh",
+      "bait3": "Chậm",
+      "ans": "Lâu",
+      "diff": "2",
+      "topic": "Ca Dao Tục Ngữ"
+    },
+    {
+      "content": "Đâu là tên một truyện cổ tích nổi tiếng",
+      "bait1" : "Chú mèo đi tông",
+      "bait2": "Chú mèo đi bốt",
+      "bait3": "Chú mèo đi sục",
+      "ans": "Chú mèo đi hia",
+      "diff": "2",
+      "topic": "Cổ Tích"
+    },
+    {
+      "content": "Đâu là tên một bãi biển ở Quảng Bình?",
+      "bait1" : "Đá Lăn",
+      "bait2": "Đá Chạy",
+      "bait3": "Đá Bò",
+      "ans": "Đá Nhảy",
+      "diff": "2",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Bộ phim Chị Dậu được chuyển thể từ tác phẩm nào?",
+      "bait1" : "Người mẹ cầm súng",
+      "bait2": "Làng Vũ Đại ngày ấy",
+      "bait3": "Vợ chồng A Phủ",
+      "ans": "Tắt đèn",
+      "diff": "2",
+      "topic": "Văn Học"
+    },
+    {
+      "content": "Vườn quốc gia nào hiện không nằm trong danh sách Vườn di sản ASEAN?",
+      "bait1": "Kon Ka Kinh",
+      "bait2": "Chư Mom Ray",
+      "bait3": "Bạch Mã",
+      "ans": "Tam Đảo",
+      "diff": "2",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "“Con cò bé bé/ Nó đậu cành tre/ Đi không hỏi mẹ/ Biết đi đường nào”, là câu hát trong bài hát nào?",
+      "bait1": "Đồng dao con cò",
+      "bait2": "Con cò bé bé",
+      "bait3": "Cánh chim tuổi thơ",
+      "ans": "Mẹ yêu không nào",
+      "diff": "2",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "“Bạch đầu quân” là tên gọi của lực lượng dân quân nào trong kháng chiến chống Mỹ?",
+      "bait1": "Thanh niên",
+      "bait2": "Phụ nữ",
+      "bait3": "Nhi đồng",
+      "ans": "Các cụ già",
+      "diff": "2",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Chủ tịch Hồ Chí Minh có biệt hiệu là gì trong thời gian hoạt động Cách mạng ở HongKong?",
+      "bait1": "Nguyễn Ái Quốc",
+      "bait2": "Nguyễn Tất Thành",
+      "bait3": "Nguyễn Sinh Cung",
+      "ans": "Tống Văn Sơ",
+      "diff": "2",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Tiền thân của Đảng Cộng sản Việt Nam có tên gọi là gì?",
+      "bait1": "An Nam Cộng sản Đảng",
+      "bait2": "Hội Việt Nam cách mạng thanh niên",
+      "bait3": "Đảng cứu quốc",
+      "ans": "Đảng Cộng sản Đông Dương",
+      "diff": "2",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Đâu là nhà triết học, xã hội học, bác học và lý thuyết của chủ nghĩa xã hội khoa học, bạn thân thiết và đồng chí chiến đấu của Các Mác, lãnh tụ cách mạng vĩ đại của giai cấp công nhân thế giới.",
+      "bait1": "Lê-nin",
+      "bait2": "Mao Trạch Đông",
+      "bait3": "Hồ Chí Minh",
+      "ans": "Ăng-ghen",
+      "diff": "3",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Từ nào còn thiếu trong câu tục ngữ dân gian sau về kinh nghiệm gieo trồng: “Trẻ trồng đa, già trồng …”",
+      "bait1": "Chuối",
+      "bait2": "Mít",
+      "bait3": "Bưởi",
+      "ans": "Thông",
+      "diff": "3",
+      "topic": "Cao Dao Tục Ngữ"
+    },
+    {
+      "content": "Tên ngọn thác Đambri hùng vĩ của núi rừng Tây Nguyên có ý nghĩa là gì?",
+      "bait1": "Chịu khó",
+      "bait2": "Dũng cảm",
+      "bait3": "Chung thủy",
+      "ans": "Đợi chờ",
+      "diff": "3",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Trên toàn miền Nam, quân ta đã loại khỏi vòng chiến đấu 104.000 tên địch trong đó có 42.000 quân Mĩ, 3.500 quân đồng minh, bắn rơi 1.430 máy bay. Đó là kết quả của chiến thắng nào?",
+      "bait1": "Ấp Bắc(1963).",
+      "bait2": "Vạn Tường (1965).",
+      "bait3": "trong mùa khô 1966 - 1967.",
+      "ans": "trong mùa khô 1965 - 1966.",
+      "diff": "3",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Câu nói - Không có gì quý hơn độc lập tự do - được Bác Hồ nói trong",
+      "bait1": "Hội nghị Chính trị đặc biệt (3 - 1964).",
+      "bait2": "Văn kiện Hội nghị Trung ương Đảng lần thứ 12 (12 - 1965).",
+      "bait3": "Kì họp thứ hai Quốc hội khoá III (4 - 1965).",
+      "ans": "Lời kêu gọi kháng chiến chống Mĩ (17 - 7 - 1966).",
+      "diff": "3",
+      "topic": "Lịch Sử"
+    }
+  ]
+}

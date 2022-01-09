@@ -14,6 +14,13 @@ public class QuestionAndAnswer {
     public QuestionAndAnswer() {
     }
 
+    public QuestionAndAnswer(String question, String[] baits, String answer, String difficulty) {
+        this.difficulty = difficulty;
+        this.question = question;
+        this.baits = baits;
+        this.answer = answer;
+    }
+
     public QuestionAndAnswer(String difficulty, String topic, int point, String question, String[] baits, String answer, float speed, int imgDescription) {
         this.difficulty = difficulty;
         this.topic = topic;
