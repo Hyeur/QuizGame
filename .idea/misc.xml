@@ -4,14 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/drawable/avatar_frame.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/drawable/button_control.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/drawable/button_correct.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/drawable/button_incorrect.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/drawable/incorrect.xml" value="0.3645833333333333" />
         <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/drawable/incorrect_red.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/drawable/rect.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/drawable/round_style.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/layout/activity_main.xml" value="0.3496376811594203" />
+        <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/layout/activity_main_menu.xml" value="0.3484375" />
+        <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/layout/activity_play_menu.xml" value="0.33" />
+        <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
+        <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/layout/fragment_profile.xml" value="0.3625" />
+        <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/layout/fragment_setting.xml" value="0.3625" />
+        <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/layout/toolbar.xml" value="0.3625" />
+        <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/menu/bottom_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/menu/main_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/hieuz/AndroidStudioProjects/QuizGame/app/src/main/res/menu/play_action_bar.xml" value="0.3625" />
       </map>
     </option>
   </component>

@@ -17,7 +17,6 @@ public class Helper extends SQLiteOpenHelper {
     String str_tblArchive = "create table Archive(id integer primary key, Questions integer not null, Point integer, ratio text not null,aveSpeed text);";
 
 
-
     public Helper(@Nullable Context context, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, "database", factory, version);
     }
@@ -33,15 +32,15 @@ public class Helper extends SQLiteOpenHelper {
 
     }
 
-    public void addQuestion(String Question, String bait1, String bait2, String bait3,String ans, String diff) {
+    public void addQuestion(String Question, String bait1, String bait2, String bait3, String ans, String diff) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("content",Question);
-        contentValues.put("bait1",bait1);
-        contentValues.put("bait2",bait2);
-        contentValues.put("bait3",bait3);
-        contentValues.put("ans",ans);
-        contentValues.put("diff",diff);
+        contentValues.put("content", Question);
+        contentValues.put("bait1", bait1);
+        contentValues.put("bait2", bait2);
+        contentValues.put("bait3", bait3);
+        contentValues.put("ans", ans);
+        contentValues.put("diff", diff);
         db.insert("Quetions", null, contentValues);
         db.close();
     }
@@ -60,7 +59,8 @@ public class Helper extends SQLiteOpenHelper {
         c.close();
         return currentQuestion;
     }
-    public String ReadAllQuestion(){
+
+    public String ReadAllQuestion() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "select content from Quetions";
         String allQuestions = "";
@@ -75,13 +75,14 @@ public class Helper extends SQLiteOpenHelper {
         return allQuestions;
     }
 
-    public void DeleteQuestionById(int id){
+    public void DeleteQuestionById(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         String rowId = Integer.toString(id);
-        db.delete("Questions","id=?", new String[]{rowId});
+        db.delete("Questions", "id=?", new String[]{rowId});
         db.close();
     }
-    public void DeleteAllQuestion(){
+
+    public void DeleteAllQuestion() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("delete from Quetions");
         db.close();

@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     QaA.add(new QuestionAndAnswer(content, baits, ans, diff, img));
+
                 } catch (Exception e) {
                     Toast.makeText(MainActivity.this, "data error", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
@@ -239,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationStart(Animator animation) {
                 MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.correct_answer_sound_effect);
+                mp.setVolume(200,200);
                 mp.start();
                 correct.setVisibility(View.VISIBLE);
                 incorrect.setVisibility(View.GONE);
