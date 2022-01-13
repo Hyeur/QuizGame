@@ -16,10 +16,10 @@
 
         <ImageView
             android:id="@+id/imageViewAvatar"
-            android:background="@drawable/avatar_frame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginTop="48dp"
+            android:background="@drawable/avatar_frame"
             android:contentDescription="@string/avatar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,10 +28,10 @@
             tools:src="@drawable/hh" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textViewJoinDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You"
+            android:text="U"
             android:textColor="#FFFFFF"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
@@ -58,13 +58,15 @@
                 android:src="@drawable/ic_baseline_stars_24" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textViewStarPointHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:inputType="number"
                 android:text="999"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
 
         <ScrollView
@@ -87,39 +89,94 @@
                     android:layout_marginBottom="3dp"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="75dp"
+                    <FrameLayout
+                        android:id="@+id/Geography"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:background="@drawable/rect"
                         android:backgroundTint="@color/violet"
-                        android:gravity="bottom|left"
-                        android:padding="10dp"
-                        android:stateListAnimator="@null"
-                        android:text="Địa Lý"
                         android:textAlignment="gravity"
-                        android:textAllCaps="false"
                         android:textColor="#E3D8D8"
-                        android:textSize="16sp" />
+                        android:textSize="16sp">
 
-                    <Button
-                        android:id="@+id/button8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="75dp"
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/ic_baseline_cloud_24" />
+
+                        <TextView
+                            android:id="@+id/progress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:minHeight="48dp"
+                            android:text="0/15"
+                            android:textColor="#F1EAEA"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Địa Lý"
+                            android:textColor="#F1EAEA"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/Music"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:background="@drawable/rect"
                         android:backgroundTint="@color/organe"
-                        android:gravity="bottom|left"
-                        android:padding="10dp"
-                        android:stateListAnimator="@null"
-                        android:text="Âm Nhạc"
                         android:textAlignment="gravity"
-                        android:textAllCaps="false"
                         android:textColor="#E3D8D8"
-                        android:textSize="16sp" />
+                        android:textSize="16sp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/ic_baseline_music_note_24" />
+
+                        <TextView
+                            android:id="@+id/progress2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:minHeight="48dp"
+                            android:text="0/15"
+                            android:textColor="#F1EAEA"
+                            android:textSize="22sp" />
+
+
+                        <TextView
+                            android:id="@+id/textView36"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Âm Nhạc"
+                            android:textColor="#F1EAEA"
+                            android:textSize="16sp" />
+                    </FrameLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -128,39 +185,95 @@
                     android:layout_marginBottom="3dp"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="75dp"
+                    <FrameLayout
+                        android:id="@+id/History"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:background="@drawable/rect"
                         android:backgroundTint="@color/gray"
-                        android:gravity="bottom|left"
-                        android:padding="10dp"
-                        android:stateListAnimator="@null"
-                        android:text="Lịch Sử"
                         android:textAlignment="gravity"
-                        android:textAllCaps="false"
                         android:textColor="#E3D8D8"
-                        android:textSize="16sp" />
+                        android:textSize="16sp">
 
-                    <Button
-                        android:id="@+id/button6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="75dp"
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/ic_baseline_history_edu_24" />
+
+                        <TextView
+                            android:id="@+id/progress3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:minHeight="48dp"
+                            android:text="0/15"
+                            android:textColor="#F1EAEA"
+                            android:textSize="22sp" />
+
+
+                        <TextView
+                            android:id="@+id/textView39"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Lịch Sử"
+                            android:textColor="#F1EAEA"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/Literature"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:background="@drawable/rect"
-                        android:backgroundTint="@color/light_blue_600"
-                        android:gravity="bottom|left"
-                        android:padding="10dp"
-                        android:stateListAnimator="@null"
-                        android:text="Văn Hóa"
+                        android:backgroundTint="@color/lime"
                         android:textAlignment="gravity"
-                        android:textAllCaps="false"
                         android:textColor="#E3D8D8"
-                        android:textSize="16sp" />
+                        android:textSize="16sp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/ic_baseline_menu_book_24" />
+
+                        <TextView
+                            android:id="@+id/progress4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:minHeight="48dp"
+                            android:text="0/15"
+                            android:textColor="#F1EAEA"
+                            android:textSize="22sp" />
+
+
+                        <TextView
+                            android:id="@+id/textView33"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Văn Học"
+                            android:textColor="#F1EAEA"
+                            android:textSize="16sp" />
+                    </FrameLayout>
 
                 </LinearLayout>
 
@@ -170,35 +283,64 @@
                     android:layout_marginBottom="3dp"
                     android:orientation="horizontal">
 
-                    <Button
+                    <FrameLayout
                         android:id="@+id/button9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="75dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:background="@drawable/rect"
-                        android:backgroundTint="@color/design_default_color_error"
-                        android:gravity="bottom|left"
-                        android:padding="10dp"
-                        android:stateListAnimator="@null"
-                        android:text="Ẩm Thực"
+                        android:backgroundTint="@color/purple_700"
                         android:textAlignment="gravity"
-                        android:textAllCaps="false"
                         android:textColor="#E3D8D8"
-                        android:textSize="16sp" />
+                        android:textSize="16sp">
 
-                    <Button
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/ic_baseline_fastfood_24" />
+
+                        <TextView
+                            android:id="@+id/progress5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:minHeight="48dp"
+                            android:text="0/15"
+                            android:textColor="#F1EAEA"
+                            android:textSize="22sp" />
+
+
+                        <TextView
+                            android:id="@+id/textView37"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Ẩm Thực"
+                            android:textColor="#F1EAEA"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
                         android:id="@+id/button10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="75dp"
+                        android:visibility="invisible"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:background="@drawable/rect"
-                        android:backgroundTint="@color/light_blue_600"
-                        android:stateListAnimator="@null"
-                        android:text="Button"
-                        android:textAllCaps="false"
-                        android:textSize="16sp"
-                        android:visibility="invisible" />
+                        android:backgroundTint="@color/purple_700"
+                        android:textAlignment="gravity"
+                        android:textColor="#E3D8D8"
+                        android:textSize="16sp">
+                    </FrameLayout>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

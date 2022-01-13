@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
     LottieAnimationView correct;
     LottieAnimationView progress_bar;
     int quest_chosen;
+    List<Integer> loaded_quest = new ArrayList<Integer>();
+
 
 
 
@@ -78,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -91,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
         incorrect = (LottieAnimationView) findViewById(R.id.lottie_layer_name);
         correct = (LottieAnimationView) findViewById(R.id.lottie_layer_name2);
         progress_bar = (LottieAnimationView) findViewById(R.id.progress_bar);
+
+
 
 
         //json parse
@@ -108,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 String diff = jsonObject.getString("diff");
                 String ans = jsonObject.getString("ans");
                 String topic = jsonObject.getString("topic");
+                Boolean isAnswered = false;
 
                 String[] baits = {bait1, bait2, bait3};
 
@@ -150,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
 
-                    QaA.add(new QuestionAndAnswer(content, baits, ans, diff, img));
+                    QaA.add(new QuestionAndAnswer(content, baits, ans, diff, img, isAnswered));
 
                 } catch (Exception e) {
                     Toast.makeText(MainActivity.this, "data error", Toast.LENGTH_SHORT).show();
@@ -300,7 +307,15 @@ public class MainActivity extends AppCompatActivity {
     public void randomLoadQuest(List<Button> butt) {
         Random rand = new Random();
         int upperbound = QaA.size();
+
         int quest_random = rand.nextInt(upperbound);
+
+        for (int y =0;y < loaded_quest.size();y++) {
+            if (quest_random == loaded_quest.get(y)) {
+                quest_random = rand.nextInt(upperbound);
+            }
+        }
+
         butt.clear();
         butt.add(butt1);
         butt.add(butt2);
@@ -318,6 +333,12 @@ public class MainActivity extends AppCompatActivity {
             Question.setText(QaA.get(quest_random).getQuestion());
             banner.setBackgroundResource(QaA.get(quest_random).getImgDescription());
             remain -= 1;
+        }
+        loaded_quest.add(quest_random);
+        if (loaded_quest.size() == QaA.size()){
+            finish();
+            Intent loading = new Intent(this,Loading.class);
+            this.startActivity(loading);
         }
         quest_chosen = quest_random;
     }

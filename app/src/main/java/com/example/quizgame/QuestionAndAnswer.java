@@ -9,6 +9,7 @@ public class QuestionAndAnswer {
     private String answer;
     private float speed;
     private int imgDescription;
+    private boolean answered;
 
 
     public QuestionAndAnswer() {
@@ -21,12 +22,13 @@ public class QuestionAndAnswer {
         this.answer = answer;
     }
 
-    public QuestionAndAnswer(String question, String[] baits, String answer, String difficulty,int imgDescription) {
+    public QuestionAndAnswer(String question, String[] baits, String answer, String difficulty,int imgDescription, boolean answered) {
         this.difficulty = difficulty;
         this.question = question;
         this.baits = baits;
         this.answer = answer;
         this.imgDescription = imgDescription;
+        this.answered = answered;
     }
 
     public QuestionAndAnswer(String difficulty, String topic, int point, String question, String[] baits, String answer, float speed, int imgDescription) {
@@ -38,6 +40,14 @@ public class QuestionAndAnswer {
         this.answer = answer;
         this.speed = speed;
         this.imgDescription = imgDescription;
+    }
+
+    public boolean isAnswered() {
+        return answered;
+    }
+
+    public void setAnswered(boolean answered) {
+        this.answered = answered;
     }
 
     public String getDifficulty() {

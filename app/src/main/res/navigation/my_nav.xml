@@ -3,21 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/profile">
+    app:startDestination="@id/home2">
 
     <fragment
         android:id="@+id/profile"
         android:name="com.example.quizgame.Profile"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_home2"
+            app:destination="@id/home2"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left" />
+    </fragment>
     <fragment
         android:id="@+id/home2"
         android:name="com.example.quizgame.Home"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_setting"
+            app:destination="@id/setting" />
+        <action
+            android:id="@+id/action_home2_to_profile"
+            app:destination="@id/profile"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_left" />
+    </fragment>
     <fragment
         android:id="@+id/setting"
         android:name="com.example.quizgame.setting"
         android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" />
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_setting_to_home2"
+            app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_setting_to_profile"
+            app:destination="@id/profile"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_left" />
+    </fragment>
 </navigation>
