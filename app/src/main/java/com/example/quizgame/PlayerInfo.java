@@ -2,7 +2,6 @@ package com.example.quizgame;
 
 public class PlayerInfo {
 
-    private int id;
     private String name;
     private int star;
     private int leveled;
@@ -10,18 +9,17 @@ public class PlayerInfo {
     private int QuestionsAnswered;
     private int rate;
 
-    public PlayerInfo(int id, String name, int star, int leveled, String joindate, int questionsAnswered, int rate) {
-        this.id = id;
+    public PlayerInfo() {
+    }
+
+    public PlayerInfo(String name, int star, int leveled, String joindate, int questionsAnswered, int rate) {
+
         this.name = name;
         this.star = star;
         this.leveled = leveled;
         this.joindate = joindate;
-        QuestionsAnswered = questionsAnswered;
+        this.QuestionsAnswered = questionsAnswered;
         this.rate = rate;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {

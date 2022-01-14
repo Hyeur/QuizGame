@@ -27,16 +27,21 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+import static com.example.quizgame.config.AM_NHAC_SCORE;
+import static com.example.quizgame.config.AM_THUC_SCORE;
+import static com.example.quizgame.config.DIA_LY_SCORE;
+import static com.example.quizgame.config.JOIN_DATE;
+import static com.example.quizgame.config.LEVEL_COMPLETED;
+import static com.example.quizgame.config.LICH_SU_SCORE;
+import static com.example.quizgame.config.PLAYER_NAME;
+import static com.example.quizgame.config.PLAYER_STAR;
+import static com.example.quizgame.config.QUESTION_ANSWERED;
+import static com.example.quizgame.config.RATE;
+import static com.example.quizgame.config.VAN_HOA_SCORE;
+
 public class Main_menu extends AppCompatActivity {
 
-    ImageView Background;
-    ImageView AvatarProfile;
-    TextView ProfilePlayerName;
-    TextView ProfilePlayerStar;
-    TextView LevelsCompleted;
-    TextView JoinDate;
-    TextView QuestionsAnswered;
-    TextView CorrectAnswers;
+
     Helper dbHelper = new Helper(Main_menu.this, null, 1);
     SQLiteDatabase db;
 
@@ -52,15 +57,6 @@ public class Main_menu extends AppCompatActivity {
 
 
 
-        Background = findViewById(R.id.imageViewBackground);
-        AvatarProfile  = findViewById(R.id.imageViewAvatarProfile);
-        ProfilePlayerName = findViewById(R.id.textViewEditableName);
-        ProfilePlayerStar = findViewById(R.id.textViewStarPointProfile);
-        LevelsCompleted = findViewById(R.id.textViewLevelsCompleted);
-        JoinDate = findViewById(R.id.textViewJoinDate);
-        QuestionsAnswered = findViewById(R.id.questionAnswered);
-        CorrectAnswers = findViewById(R.id.percenrCorrectAnswer);
-
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -69,25 +65,43 @@ public class Main_menu extends AppCompatActivity {
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
 
-//        try {
-//            db = dbHelper.getWritableDatabase();
-//        } catch (SQLException exception) {
-//            db = dbHelper.getReadableDatabase();
-//        }
 
         try {
+
             PlayerInfo PI = dbHelper.getAllPlayerStats();
-            ProfilePlayerName.setText(PI.getName());
-            ProfilePlayerStar.setText(PI.getStar());
-            LevelsCompleted.setText(PI.getLeveled());
-            JoinDate.setText(PI.getJoindate());
-            QuestionsAnswered.setText(PI.getQuestionsAnswered());
-            CorrectAnswers.setText(PI.getRate()+"%");
+            Topic TP1 = dbHelper.getTopicsByName("Địa Lý");
+            Topic TP2 = dbHelper.getTopicsByName("Âm Nhạc");
+            Topic TP3 = dbHelper.getTopicsByName("Lịch Sử");
+            Topic TP4 = dbHelper.getTopicsByName("Văn Hóa");
+            Topic TP5 = dbHelper.getTopicsByName("Ẩm Thực");
+            config_getPlayerStats(PI);
+
+            config_getAllTopicStasts(TP1,TP2,TP3,TP4,TP5);
+
         }
         catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(Main_menu.this,"PI error",Toast.LENGTH_SHORT).show();
+            Toast.makeText(Main_menu.this,"Main_menu error",Toast.LENGTH_SHORT).show();
         }
+
+
+    }
+
+    private void config_getAllTopicStasts(Topic tp1,Topic tp2,Topic tp3,Topic tp4,Topic tp5) {
+        DIA_LY_SCORE = tp1.getStarGained();
+        AM_NHAC_SCORE = tp2.getStarGained();
+        LICH_SU_SCORE = tp3.getStarGained();
+        VAN_HOA_SCORE = tp4.getStarGained();
+        AM_THUC_SCORE = tp5.getStarGained();
+    }
+
+    public void config_getPlayerStats(PlayerInfo PI){
+        PLAYER_NAME = PI.getName();
+        PLAYER_STAR = PI.getStar();
+        LEVEL_COMPLETED = PI.getLeveled();
+        JOIN_DATE = PI.getJoindate();
+        QUESTION_ANSWERED = PI.getQuestionsAnswered();
+        RATE = PI.getRate();
 
     }
 

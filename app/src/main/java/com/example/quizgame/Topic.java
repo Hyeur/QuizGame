@@ -5,6 +5,14 @@ public class Topic {
     private int StarGained;
     private String percent;
 
+    public Topic() {
+    }
+
+    public Topic(String topicName, int starGained) {
+        this.topicName = topicName;
+        StarGained = starGained;
+    }
+
     public Topic(String topicName) {
         this.topicName = topicName;
     }

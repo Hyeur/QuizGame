@@ -1,57 +1,12 @@
 {
   "question" : [
     {
-      "content": "Điền chữ còn thiếu: Treo đầu dê, bán thịt ...",
-      "bait1" : "Cừu",
-      "bait2": "Cầy",
-      "bait3": "Cẩu",
-      "ans": "Chó",
-      "diff": "1",
-      "topic": "Ca Dao Tục Ngữ"
-    },
-    {
-      "content": "Điền vào chỗ trống: Ăn chưa no, … chưa tới",
-      "bait1" : "Đâm",
-      "bait2": "Đo",
-      "bait3": "Cho",
-      "ans": "Lo",
-      "diff": "1",
-      "topic": "Ca Dao Tục Ngữ"
-    },
-    {
       "content": "Trong phả hệ gia đình, một người đàn ông có một người con trai, mà người đàn ông đó là chú của bố. Vậy con trai của bố sẽ xưng hô thế nào với con trai của người đàn ông?",
-      "bait1" : "Anh",
-      "bait2": "Bác",
-      "bait3": "Ông",
-      "ans": "Chú",
-      "diff": "1",
-      "topic": "Văn Hóa"
-    },
-    {
-      "content": "Đâu là bài hát nổi tiếng của ca sĩ Đàm Vĩnh Hưng?",
-      "bait1" : "Ta lằng",
-      "bait2": "Mắt nai",
-      "bait3": "Anh nhà ở đâu thế?",
-      "ans": "Lâu đài tình ái",
-      "diff": "1",
-      "topic": "mrdam"
-    },
-    {
-      "content": "Đâu là tên một loại mũ?",
-      "bait1" : "Lưỡi hái",
-      "bait2": "Lưỡi lê",
-      "bait3": "Lưỡi rắn",
-      "ans": "Lưỡi trai",
-      "diff": "1",
-      "topic": "Đời Sống"
-    },
-    {
-      "content": "Người ta thường nấu canh chua với thứ gì?",
-      "bait1" : "củ cải",
-      "bait2": "rau đay",
-      "bait3": "súp lơ xanh",
-      "ans": "cà chua",
-      "diff": "1",
+      "bait1" : "anh",
+      "bait2": "bác",
+      "bait3": "ông",
+      "ans": "chú",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_1",
       "topic": "Văn Hóa"
     },
     {
@@ -60,7 +15,133 @@
       "bait2": "Một điệu hát",
       "bait3": "Một loại công cụ làm nông",
       "ans": "Mẹ",
-      "diff": "1",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_2",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Văn hóa mặc của người Việt cổ là:",
+      "bait1" : "mặc váy, áo ngắn",
+      "bait2": "có tục xăm mình, để tóc dài",
+      "bait3": "cởi trần, đóng khố, có tục xăm mình",
+      "ans": "Đàn ông cởi trần, đóng khố. Đàn bà mặc váy, áo ngắn",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_3",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Một hoạt động truyền thống mà người lớn thường làm với trẻ em và con cháu nhỏ trong ngày Tết?",
+      "bait1" : "Xông đất",
+      "bait2": "Mời bia, rượu",
+      "bait3": "Cắn hạt dưa",
+      "ans": "Lì xì",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_4",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Việt Nam có bao nhiêu di sản văn hóa thế giới ?",
+      "bait1" : "7",
+      "bait2": "8",
+      "bait3": "9",
+      "ans": "6",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_5",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Đàn nguyệt là nhạc cụ có ở miền nào của Việt Nam ?",
+      "bait1" : "Miền Bắc",
+      "bait2": "Miền Trung",
+      "bait3": "Cả 3 miền",
+      "ans": "Miền Nam",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_6",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Người Nga có phong tục tặng quà gì cho quý khách của mình ?",
+      "bait1" : "Đồ trang sức",
+      "bait2": "Những tác phẩm văn học họ yêu thích",
+      "bait3": "Hoa",
+      "ans": "Bánh Mỳ",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_7",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Nền văn minh Babylon hiện nay thuộc nước nào ?",
+      "bait1" : "Arab Saudi",
+      "bait2": "Iran",
+      "bait3": "Thổ Nhĩ Kỳ",
+      "ans": "Iraq",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_8",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Biểu tượng của Canada là gì?",
+      "bait1" : "Chuột túi",
+      "bait2": "Lá thông",
+      "bait3": "Cá voi",
+      "ans": "Lá phông",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_9",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Người ta thường nấu canh chua với thứ gì?",
+      "bait1" : "củ cải",
+      "bait2": "rau đay",
+      "bait3": "súp lơ xanh",
+      "ans": "cà chua",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_9",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Người Việt thường làm gì vào 23 tháng Chạp hằng năm",
+      "bait1" : "Đốt pháo hoa",
+      "bait2": "Đi tảo mộ",
+      "bait3": "Cúng tất niên",
+      "ans": "Đưa ông Táo",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_10",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Người Việt có văn hóa đám cưới như thế nào?",
+      "bait1" : "Chỉ tổ chức tiệc cưới",
+      "bait2": "Đám hỏi, sau đó tổ chức tiệc cưới",
+      "bait3": "Chỉ đám hỏi rồi rước dâu",
+      "ans": "Đám hỏi, rước dâu, sau đó tổ chức tiệc cưới",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_11",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Đâu là văn hóa uống cà phê truyền thống của người Việt Nam",
+      "bait1" : "Uống cà phê pha máy",
+      "bait2": "Uống cà phê phin",
+      "bait3": "Uống cà phê pha máy kèm trà",
+      "ans": "Uống cà phê phin kèm trà",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_12",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Một hoạt động của người Việt Nam trong đêm giao thừa Tết âm lịch?",
+      "bait1" : "Xem táo quân",
+      "bait2": "Đưa ông Táo",
+      "bait3": "Cúng tất niên",
+      "ans": "Cúng giao thừa",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_13",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Trên bàn khách của mỗi gia đình người Việt trong dịp Tết âm lịch, không thể thiếu thứ gì?",
+      "bait1" : "Thuốc lá",
+      "bait2": "Bia rượu",
+      "bait3": "Bình hoa",
+      "ans": "Mâm ngũ quả",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_14",
+      "topic": "Văn Hóa"
+    },
+    {
+      "content": "Một nét đặc trưng của văn hóa Việt Nam trong những dịp lễ Tết?",
+      "bait1" : "Mua cây cảnh",
+      "bait2": "Mua quần áo mới",
+      "bait3": "Phơi thảm",
+      "ans": "Nấu bánh chưng, bánh tét",
+      "url": "C:/Users/boben/Downloads/pic/Văn Hóa/VH_15",
       "topic": "Văn Hóa"
     },
     {
@@ -69,17 +150,17 @@
       "bait2": "Thịt",
       "bait3": "Củ cải",
       "ans": "Gạo",
-      "diff": "1",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_2",
       "topic": "Ẩm Thực"
     },
     {
-      "content": "Bảy chú lùn trong truyện cổ tích “Nàng Bạch Tuyết và bảy chú lùn” làm nghề gì?",
-      "bait1" : "Thợ rèn",
-      "bait2": "Thợ săn",
-      "bait3": "Thợ may",
-      "ans": "Thợ mỏ",
-      "diff": "1",
-      "topic": "Cổ Tích"
+      "content": "Người ta thường nấu canh chua với thứ gì?",
+      "bait1" : "Rau đay",
+      "bait2": "xúp lơ xanh",
+      "bait3": "Củ cải",
+      "ans": "cà chua",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_1",
+      "topic": "Ẩm Thực"
     },
     {
       "content": "Đâu là tên một loại bánh Huế?",
@@ -87,35 +168,251 @@
       "bait2": "Thích",
       "bait3": "Vui",
       "ans": "Khoái",
-      "diff": "1",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_3",
       "topic": "Ẩm Thực"
     },
     {
-      "content": "Văn hóa mặc của người Việt cổ là:",
-      "bait1" : "mặc váy, áo ngắn",
-      "bait2": "có tục xăm mình, để tóc dài",
-      "bait3": "cởi trần, đóng khố, có tục xăm mình",
-      "ans": "Đàn ông cởi trần, đóng khố. Đàn bà mặc váy, áo ngắn",
-      "diff": "2",
-      "topic": "Văn Hóa"
+      "content": "Đâu là một đặc sản của TP. Huế",
+      "bait1" : "Mỳ Quảng",
+      "bait2": "Cao lầu",
+      "bait3": "kẹo dừa",
+      "ans": "Mè xửng",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_4",
+      "topic": "Ẩm Thực"
     },
     {
-      "content": "Điền vào chỗ trống: “Ăn kĩ no …,cày sâu tốt lúa.”",
-      "bait1" : "Mau",
-      "bait2": "Nhanh",
-      "bait3": "Chậm",
-      "ans": "Lâu",
-      "diff": "2",
-      "topic": "Ca Dao Tục Ngữ"
+      "content": "Bánh trôi nước thường được làm từ gì?",
+      "bait1" : "Bột gạo",
+      "bait2": "Bột lọc",
+      "bait3": "Bột mỳ",
+      "ans": "Bột nếp",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_5",
+      "topic": "Ẩm Thực"
     },
     {
-      "content": "Đâu là tên một truyện cổ tích nổi tiếng",
-      "bait1" : "Chú mèo đi tông",
-      "bait2": "Chú mèo đi bốt",
-      "bait3": "Chú mèo đi sục",
-      "ans": "Chú mèo đi hia",
-      "diff": "2",
-      "topic": "Cổ Tích"
+      "content": "Kẹo dừa là một đặc sản của",
+      "bait1" : "Sóc Trăng",
+      "bait2": "Cà Mau",
+      "bait3": "Nha Trang",
+      "ans": "Bến Tre",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_6",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Trong Mỳ Quảng Phú Chiêm gồm những thành phần gì?",
+      "bait1" : "Tôm, thịt gà, trứng gà",
+      "bait2": "Thịt heo, tôm",
+      "bait3": "Cá lóc, trứng cút, tôm",
+      "ans": "Thịt heo, tôm, trứng cút, bánh đa",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_7",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Một loại bánh dùng chung với Bánh canh cá lóc",
+      "bait1" : "Bánh đa",
+      "bait2": "Bánh cốm",
+      "bait3": "Bánh xèo",
+      "ans": "Bánh quẩy",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_8",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Một phụ gia không thể thiếu để nấu bún bò Huế",
+      "bait1" : "hành phi",
+      "bait2": "Tỏi",
+      "bait3": "Riềng",
+      "ans": "Sả",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_9",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Bún đậu mắm tôm có nguồn gốc từ đâu?",
+      "bait1" : "Đà Nẵng",
+      "bait2": "Thanh Hóa",
+      "bait3": "Tây Ninh",
+      "ans": "Hà Nội",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_10",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Một đặc sản của Tam Kỳ",
+      "bait1" : "Cơm tấm",
+      "bait2": "Cơm thố",
+      "bait3": "Cơm chiên dương châu",
+      "ans": "Cơm gà",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_11",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Một món ăn truyền thống phổ biến ở miền Bắc nước ta vào dịp tết",
+      "bait1" : "Bánh chưng",
+      "bait2": "Bánh tét",
+      "bait3": "Bò khô",
+      "ans": "Hột vịt kho thịt",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_12",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Một loại mứt phổ biến nhất vào dịp Tết",
+      "bait1" : "Mứt nho",
+      "bait2": "Mứt táo",
+      "bait3": "Mứt khoai",
+      "ans": "Mứt gừng",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_13",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Một loại hạt không thể thiếu trong các dịp lễ, Tết",
+      "bait1" : "Hạt đu đủ",
+      "bait2": "Hạt thanh long",
+      "bait3": "Hạt dẻ",
+      "ans": "Hạt dưa",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_14",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Một loại mắm nhưng ở 2 miền thì khác nhau hoàn toàn",
+      "bait1" : "Mắm rò",
+      "bait2": "Mắm cá cơm",
+      "bait3": "Mắm muối mè",
+      "ans": "Mắm tôm",
+      "url": "C:/Users/boben/Downloads/pic/Ẩm Thực/AT_15",
+      "topic": "Ẩm Thực"
+    },
+    {
+      "content": "Đâu là bài hát nổi tiếng của ca sĩ Đàm Vĩnh Hưng?”",
+      "bait1" : "Ta lằng",
+      "bait2": "Mắt nai",
+      "bait3": "Anh nhà ở đâu thế",
+      "ans": "Lâu đài tình ái",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_1",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "“Con cò bé bé/ Nó đậu cành tre/ Đi không hỏi mẹ/ Biết đi đường nào”, là câu hát trong bài hát nào?”",
+      "bait1" : "Đồng dao con cò",
+      "bait2": "Con cò bé bé",
+      "bait3": "Cánh chim tuổi thơ",
+      "ans": "Mẹ yêu không nào",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_2",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Bài hát Lý cây đa thuộc dân ca vùng nào?",
+      "bait1" : "Dân ca Quảng Nam",
+      "bait2": "Dân ca Thừa Thiên Huế",
+      "bait3": "Dân ca Tây Nam Bộ",
+      "ans": "Dân ca quan họ Bắc Ninh",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_3",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Bài hát Mái trường mến yêu là của nhạc sĩ nào?",
+      "bait1" : "Hoàng Lân",
+      "bait2": "Lưu Hữu Phước",
+      "bait3": "Văn Cao",
+      "ans": "Lê Quốc Thắng",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_4",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Nhạc sĩ thiên tài Mozart là người nước nào?",
+      "bait1" : "Đức",
+      "bait2": "Tây Ban Nha",
+      "bait3": "Anh",
+      "ans": "Áo",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_5",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Bài hát Người lạ ơi có bao nhiêu thứ được mượn?",
+      "bait1" : "1",
+      "bait2": "2",
+      "bait3": "4",
+      "ans": "3",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_6",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Trong bài hát Túp lều lý tưởng, túp lều được xây bằng gì?",
+      "bait1" : "Gạch",
+      "bait2": "Lá cọ",
+      "bait3": "Lá dừa",
+      "ans": "Duyên và tình",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_7",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Khuôn nhạc gồm mấy dòng và mấy khe?",
+      "bait1" : "Năm dòng ba khe",
+      "bait2": "Ba dòng bốn khe",
+      "bait3": "Bốn dòng bốn khe",
+      "ans": "Năm dòng bốn khe",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_8",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Bài hát Đi cấy thuộc dân ca vùng, miền nào",
+      "bait1" : "Dân ca Nghệ An",
+      "bait2": "Dân ca Nam Bộ",
+      "bait3": "Dân ca Hà Tĩnh",
+      "ans": "Dân ca Thanh Hóa",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_9",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Bước ra đời là ông này bà nọ, trở về nhà là một đứa con ngoan - là câu hát của bài nhạc nào?",
+      "bait1" : "Về nhà ăn Tết",
+      "bait2": "Mùa xuân long phụng sum vầy",
+      "bait3": "Đi về nhà",
+      "ans": "Mang tiền về cho mẹ",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_10",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Hoàng tử indie – Vũ, đã collab với một nghệ sĩ quốc tế nào sau đây?",
+      "bait1" : "Justin Bieber",
+      "bait2": "Snoop Dog",
+      "bait3": "Cardi B",
+      "ans": "Lukas Graham",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_11",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Một ban nhạc indie nổi tiếng ở miền Bắc nước ta đã giành chiến thắng tại cả hai đề cử cho hạng mục Nghệ sĩ mới của năm và Bài hát của năm  tại lễ trao giải thưởng âm nhạc Cống hiến lần thứ 13 năm 2018.",
+      "bait1" : "Cá Hồi Hoang",
+      "bait2": "Chillies",
+      "bait3": "The Cassette",
+      "ans": "Ngọt",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_12",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Nguyên quán của nhóm nhạc cá hồi hoang là ở đâu?",
+      "bait1" : "Hải Phòng",
+      "bait2": "TP. Hồ Chí Minh",
+      "bait3": "Hà Nội",
+      "ans": "Đà Lạt",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_13",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Cố nhạc sĩ Trịnh Công Sơn mất vào năm nào?",
+      "bait1" : "1999",
+      "bait2": "2000",
+      "bait3": "2002",
+      "ans": "2001",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_14",
+      "topic": "Âm Nhạc"
+    },
+    {
+      "content": "Bài hát Nhớ mùa thu Hà Nội là do nhạc sĩ nào sáng tác?",
+      "bait1" : "Quang Hà",
+      "bait2": "Ngô Thụy Miên",
+      "bait3": "Hoàng Lân",
+      "ans": "Trịnh Công Sơn",
+      "url": "C:/Users/boben/Downloads/pic/Âm Nhạc/AN_15",
+      "topic": "Âm Nhạc"
     },
     {
       "content": "Đâu là tên một bãi biển ở Quảng Bình?",
@@ -123,17 +420,8 @@
       "bait2": "Đá Chạy",
       "bait3": "Đá Bò",
       "ans": "Đá Nhảy",
-      "diff": "2",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_1",
       "topic": "Địa Lý"
-    },
-    {
-      "content": "Bộ phim Chị Dậu được chuyển thể từ tác phẩm nào?",
-      "bait1" : "Người mẹ cầm súng",
-      "bait2": "Làng Vũ Đại ngày ấy",
-      "bait3": "Vợ chồng A Phủ",
-      "ans": "Tắt đèn",
-      "diff": "2",
-      "topic": "Văn Học"
     },
     {
       "content": "Vườn quốc gia nào hiện không nằm trong danh sách Vườn di sản ASEAN?",
@@ -141,17 +429,125 @@
       "bait2": "Chư Mom Ray",
       "bait3": "Bạch Mã",
       "ans": "Tam Đảo",
-      "diff": "2",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_2",
       "topic": "Địa Lý"
     },
     {
-      "content": "“Con cò bé bé/ Nó đậu cành tre/ Đi không hỏi mẹ/ Biết đi đường nào”, là câu hát trong bài hát nào?",
-      "bait1": "Đồng dao con cò",
-      "bait2": "Con cò bé bé",
-      "bait3": "Cánh chim tuổi thơ",
-      "ans": "Mẹ yêu không nào",
-      "diff": "2",
-      "topic": "Âm Nhạc"
+      "content": "Tên ngọn thác Đambri hùng vĩ của núi rừng Tây Nguyên có ý nghĩa là gì?",
+      "bait1": "Chịu khó",
+      "bait2": "Dũng cảm",
+      "bait3": "Chung thủy",
+      "ans": "Đợi chờ",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_3",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Đâu là một thành phố biển mà trong tên gọi có răng?",
+      "bait1" : "Đà Nẵng",
+      "bait2": "Vũng Tàu",
+      "bait3": "Hải Phòng",
+      "ans": "Nha Trang",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_4",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Tỉnh gì không thấp?",
+      "bait1": "Lạng Sơn",
+      "bait2": "Nghệ An",
+      "bait3": "Thanh Hóa",
+      "ans": "Cao Bằng",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_5",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Xuôi nam thì đến một miền, nghe tên tỉnh biết vừa yên vừa giàu?",
+      "bait1": "Nam Định",
+      "bait2": "Quảng Nam",
+      "bait3": "Nghệ An",
+      "ans": "Phú Yên",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_6",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Sông nào trước? sông nào sau? Như rồng uốn khúc đẹp màu phù sa",
+      "bait1": "Sông Đà, Sông Hồng",
+      "bait2": "Sông Hàn, Sông Cầu Đỏ",
+      "bait3": "Sông Hương, Sông Cửu Long",
+      "ans": "Sông Tiền, Sông Hậu",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_7",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Sông nào lạnh lẽo tâm can, chảy qua Đà Nẵng Quảng Nam trung phần?",
+      "bait1": "Sông Đà",
+      "bait2": "Sông Cửu Long",
+      "bait3": "Sông Hương",
+      "ans": "Sông Hàn",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_8",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Núi nào cao nhất nước ta?",
+      "bait1": "Hải Vân",
+      "bait2": "Đèo Ngang",
+      "bait3": "Trường Sơn",
+      "ans": "Hoàng Liên Sơn",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_9",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Nghe tên nửa ruộng nửa rừng, Đố ai ai trải từng đáp đi, Đó là tỉnh gì?",
+      "bait1": "Tỉnh Quảng Nam",
+      "bait2": "Tỉnh Nghệ An",
+      "bait3": "Tỉnh Thái Bình",
+      "ans": "Tỉnh Lâm Đồng",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_10",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Nơi nào có bến Ninh Kiều, Tây Đô sông nước dập dìu khách thương?",
+      "bait1": "Cà Mau",
+      "bait2": "Hải Phòng",
+      "bait3": "Bến Tre",
+      "ans": "Cần Thơ",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_11",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Nơi nào từng được mệnh danh là Hòn ngọc viễn đông?",
+      "bait1": "Hà Nội",
+      "bait2": "Đà Nẵng",
+      "bait3": "Khánh Hòa",
+      "ans": "Sài Gòn",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_12",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Theo ngược lên dòng sông Ba, Nơi buồn muôn thuở gọi là gì đây?",
+      "bait1": "DakLak",
+      "bait2": "Kon Tum",
+      "bait3": "Đà Lạt",
+      "ans": "Buôn Ma Thuột",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_13",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Tỉnh gì không sâu",
+      "bait1": "Hạ Long",
+      "bait2": "Cao Bằng",
+      "bait3": "Lạng Sơn",
+      "ans": "Bắc Cạn",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_14",
+      "topic": "Địa Lý"
+    },
+    {
+      "content": "Tỉnh gì tên chẳng thiếu đâu?",
+      "bait1": "Phú Yên",
+      "bait2": "Khánh Hòa",
+      "bait3": "Lâm Đồng",
+      "ans": "Thừa Thiên Huế",
+      "url": "C:/Users/boben/Downloads/pic/Địa Lý/ĐL_15",
+      "topic": "Địa Lý"
     },
     {
       "content": "“Bạch đầu quân” là tên gọi của lực lượng dân quân nào trong kháng chiến chống Mỹ?",
@@ -159,7 +555,7 @@
       "bait2": "Phụ nữ",
       "bait3": "Nhi đồng",
       "ans": "Các cụ già",
-      "diff": "2",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_1",
       "topic": "Lịch Sử"
     },
     {
@@ -168,7 +564,7 @@
       "bait2": "Nguyễn Tất Thành",
       "bait3": "Nguyễn Sinh Cung",
       "ans": "Tống Văn Sơ",
-      "diff": "2",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_2",
       "topic": "Lịch Sử"
     },
     {
@@ -177,7 +573,7 @@
       "bait2": "Hội Việt Nam cách mạng thanh niên",
       "bait3": "Đảng cứu quốc",
       "ans": "Đảng Cộng sản Đông Dương",
-      "diff": "2",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_3",
       "topic": "Lịch Sử"
     },
     {
@@ -186,26 +582,8 @@
       "bait2": "Mao Trạch Đông",
       "bait3": "Hồ Chí Minh",
       "ans": "Ăng-ghen",
-      "diff": "3",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_4",
       "topic": "Lịch Sử"
-    },
-    {
-      "content": "Từ nào còn thiếu trong câu tục ngữ dân gian sau về kinh nghiệm gieo trồng: “Trẻ trồng đa, già trồng …”",
-      "bait1": "Chuối",
-      "bait2": "Mít",
-      "bait3": "Bưởi",
-      "ans": "Thông",
-      "diff": "3",
-      "topic": "Ca Dao Tục Ngữ"
-    },
-    {
-      "content": "Tên ngọn thác Đambri hùng vĩ của núi rừng Tây Nguyên có ý nghĩa là gì?",
-      "bait1": "Chịu khó",
-      "bait2": "Dũng cảm",
-      "bait3": "Chung thủy",
-      "ans": "Đợi chờ",
-      "diff": "3",
-      "topic": "Địa Lý"
     },
     {
       "content": "Trên toàn miền Nam, quân ta đã loại khỏi vòng chiến đấu 104.000 tên địch trong đó có 42.000 quân Mĩ, 3.500 quân đồng minh, bắn rơi 1.430 máy bay. Đó là kết quả của chiến thắng nào?",
@@ -213,7 +591,7 @@
       "bait2": "Vạn Tường (1965).",
       "bait3": "trong mùa khô 1966 - 1967.",
       "ans": "trong mùa khô 1965 - 1966.",
-      "diff": "3",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_5",
       "topic": "Lịch Sử"
     },
     {
@@ -222,7 +600,97 @@
       "bait2": "Văn kiện Hội nghị Trung ương Đảng lần thứ 12 (12 - 1965).",
       "bait3": "Kì họp thứ hai Quốc hội khoá III (4 - 1965).",
       "ans": "Lời kêu gọi kháng chiến chống Mĩ (17 - 7 - 1966).",
-      "diff": "3",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_6",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Quốc hiệu nước ta thời vua Minh Mạng là gì?",
+      "bait1": "Đại Việt",
+      "bait2": "Văn Lang",
+      "bait3": "Đại Ngu",
+      "ans": "Đại Nam",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_7",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Ở Hà Nội, xác B52 có ở hồ nào?",
+      "bait1": "Hồ Trúc Bạch",
+      "bait2": "Hồ Tây",
+      "bait3": "Hồ Ngọc Khánh",
+      "ans": "Hồ Ngọc Hà",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_8",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Quốc gia đầu tiên sử dụng tem thư?",
+      "bait1": "Mỹ",
+      "bait2": "Pháp",
+      "bait3": "Nhật",
+      "ans": "Anh",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_9",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Bãi cọc Bạch Đằng chống quân xâm lược nước ta hiện nay ở tỉnh nào?",
+      "bait1": "Nam Định",
+      "bait2": "Hải Phòng",
+      "bait3": "Nghệ An",
+      "ans": "Quảng Ninh",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_10",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Cuộc khởi nghĩa nào sớm nhất xảy ra khi Nhật đảo chính Pháp?",
+      "bait1": "Thái Nguyên",
+      "bait2": "Bắc Sơn",
+      "bait3": "Ba Vì",
+      "ans": "Ba Tơ",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_11",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Trên tay của Lý Công Uẩn khi sinh ra đã có 4 chữ son đó là những chữ nào ?",
+      "bait1": "Xã Tắc Sơn Hà",
+      "bait2": "Giang Sơn Xã Tắc",
+      "bait3": "Xã Tắc Giang Sơn",
+      "ans": "Sơn Hà Xã Tắc",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_12",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Nước thứ 3 trên thế giới đã đưa người nước đó vào không gian đó là đất nước ?",
+      "bait1": "Mỹ",
+      "bait2": "Nga",
+      "bait3": "Việt Nam",
+      "ans": "Trung Quốc",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_13",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Vị vua nào có thời gian trị vì ngắn nhất nước ta ?",
+      "bait1": "Lê Lợi",
+      "bait2": "Lý Công Uẩn",
+      "bait3": "Bảo Đại",
+      "ans": "Dục Đức",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_14",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Ai là người đã dâng vua Thất trảm sớ chém 7 nịnh thần ?",
+      "bait1": "Cao Bá Quát",
+      "bait2": "Phùng Hưng",
+      "bait3": "Nguyễn Hiền",
+      "ans": "Chu Văn An",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_15",
+      "topic": "Lịch Sử"
+    },
+    {
+      "content": "Quốc kỳ của 11 nước Đông Nam Á có chung màu gì ?",
+      "bait1": "Vàng",
+      "bait2": "Trắng",
+      "bait3": "Xanh",
+      "ans": "Đỏ",
+      "url": "C:/Users/boben/Downloads/pic/Lịch Sử/LS_16",
       "topic": "Lịch Sử"
     }
   ]

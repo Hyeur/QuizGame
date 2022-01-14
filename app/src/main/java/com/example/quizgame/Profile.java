@@ -1,5 +1,12 @@
 package com.example.quizgame;
 
+import static com.example.quizgame.config.JOIN_DATE;
+import static com.example.quizgame.config.LEVEL_COMPLETED;
+import static com.example.quizgame.config.PLAYER_NAME;
+import static com.example.quizgame.config.PLAYER_STAR;
+import static com.example.quizgame.config.QUESTION_ANSWERED;
+import static com.example.quizgame.config.RATE;
+
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
@@ -8,6 +15,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -15,6 +25,18 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Profile extends Fragment {
+
+    Helper dbHelper = new Helper(getContext(), null, 1);
+    SQLiteDatabase db;
+
+    ImageView Background;
+    ImageView AvatarProfile;
+    TextView ProfilePlayerName;
+    TextView ProfilePlayerStar;
+    TextView LevelsCompleted;
+    TextView JoinDate;
+    TextView QuestionsAnswered;
+    TextView CorrectAnswers;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,6 +67,7 @@ public class Profile extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+
     }
 
     @Override
@@ -57,12 +80,32 @@ public class Profile extends Fragment {
 
 
 
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile,container,false);
+
+        Background = view.findViewById(R.id.imageViewBackground);
+        AvatarProfile  = view.findViewById(R.id.imageViewAvatarProfile);
+        ProfilePlayerName = view.findViewById(R.id.textViewEditableName);
+        ProfilePlayerStar = view.findViewById(R.id.textViewStarPointProfile);
+        LevelsCompleted = view.findViewById(R.id.textViewLevelsCompleted);
+        JoinDate = view.findViewById(R.id.textViewJoinDate);
+        QuestionsAnswered = view.findViewById(R.id.questionAnswered);
+        CorrectAnswers = view.findViewById(R.id.percenrCorrectAnswer);
+
+//        Toast.makeText(getContext(),PI.getName(),Toast.LENGTH_SHORT).show();
+        ProfilePlayerName.setText(PLAYER_NAME);
+        ProfilePlayerStar.setText(Integer.toString(PLAYER_STAR));
+        LevelsCompleted.setText(Integer.toString(LEVEL_COMPLETED));
+        JoinDate.setText(JOIN_DATE);
+        QuestionsAnswered.setText(Integer.toString(QUESTION_ANSWERED));
+        CorrectAnswers.setText(Integer.toString(RATE) + "%");
+
+        return view;
     }
 }

@@ -26,6 +26,7 @@ import com.airbnb.lottie.LottieAnimationView;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -53,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
     LottieAnimationView progress_bar;
     int quest_chosen;
     List<Integer> loaded_quest = new ArrayList<Integer>();
+
+    TextView Point;
+
+    int wrongAns = 0;
+    int correctAns = 0;
 
 
 
@@ -95,80 +101,120 @@ public class MainActivity extends AppCompatActivity {
         incorrect = (LottieAnimationView) findViewById(R.id.lottie_layer_name);
         correct = (LottieAnimationView) findViewById(R.id.lottie_layer_name2);
         progress_bar = (LottieAnimationView) findViewById(R.id.progress_bar);
+        Point = (TextView) findViewById(R.id.textViewStarPointPlaying);
+
+        String TOPIC = getIntent().getStringExtra("topic");
+        String pack = getIntent().getStringExtra("pack");
+        int PACK = Integer.parseInt(pack);
+
+
+
+        try {
+            updatePoint();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(MainActivity.this,"PI error",Toast.LENGTH_SHORT).show();
+        }
 
 
 
 
         //json parse
         dbHelper.DeleteAllQuestion();
-        try {
-            JSONObject object = new JSONObject(readJSON());
-            JSONArray array = object.getJSONArray("question");
-            for (int i = 0; i < array.length(); i++) {
+        QaA.clear();
 
-                JSONObject jsonObject = array.getJSONObject(i);
-                String content = jsonObject.getString("content");
-                String bait1 = jsonObject.getString("bait1");
-                String bait2 = jsonObject.getString("bait2");
-                String bait3 = jsonObject.getString("bait3");
-                String diff = jsonObject.getString("diff");
-                String ans = jsonObject.getString("ans");
-                String topic = jsonObject.getString("topic");
-                Boolean isAnswered = false;
+        if (dbHelper.isEmpty("Questions"))
+        {
+            try {
+                JSONObject object = new JSONObject(readJSON());
+                JSONArray array = object.getJSONArray("question");
+                for (int i = 0; i < array.length(); i++) {
 
-                String[] baits = {bait1, bait2, bait3};
+                    JSONObject jsonObject = array.getJSONObject(i);
+                    String content = jsonObject.getString("content");
+                    String bait1 = jsonObject.getString("bait1");
+                    String bait2 = jsonObject.getString("bait2");
+                    String bait3 = jsonObject.getString("bait3");
+                    String ans = jsonObject.getString("ans");
+                    String topic = jsonObject.getString("topic");
+                    String isAnswered = "no";
 
-                try {
-                    dbHelper.addQuestion(content, bait1, bait2, bait3, ans, diff);
-                    int img;
-                    switch (topic) {
-                        case "Âm Nhạc":
-                            img = R.drawable.music;
-                            break;
-                        case "mrdam":
-                            img = R.drawable.damvinhhung;
-                            break;
-                        case "Văn Hóa":
-                            img = R.drawable.van_hoa;
-                            break;
-                        case "Ca Dao Tục Ngữ":
-                            img = R.drawable.treodebancho;
-                            break;
-                        case "Đời Sống":
-                            img = R.drawable.hats;
-                            break;
-                        case "Ẩm Thực":
-                            img = R.drawable.food;
-                            break;
-                        case "Cổ Tích":
-                            img = R.drawable.fairy_tale;
-                            break;
-                        case "Địa Lý":
-                            img = R.drawable.georaphy;
-                            break;
-                        case "Lịch Sử":
-                            img = R.drawable.history;
-                            break;
-                        case "Văn Học":
-                            img = R.drawable.shakespeare;
-                            break;
-                        default:
-                            img = R.drawable.ic_launcher_foreground;
+                    String[] baits = {bait1, bait2, bait3};
+
+                    try {
+                        dbHelper.addQuestion(content, bait1, bait2, bait3, ans,topic,isAnswered);
+                        int img;
+                        switch (topic) {
+                            case "Âm Nhạc":
+                                img = R.drawable.music;
+                                break;
+                            case "mrdam":
+                                img = R.drawable.damvinhhung;
+                                break;
+                            case "Văn Hóa":
+                                img = R.drawable.van_hoa;
+                                break;
+                            case "Ca Dao Tục Ngữ":
+                                img = R.drawable.treodebancho;
+                                break;
+                            case "Đời Sống":
+                                img = R.drawable.hats;
+                                break;
+                            case "Ẩm Thực":
+                                img = R.drawable.food;
+                                break;
+                            case "Cổ Tích":
+                                img = R.drawable.fairy_tale;
+                                break;
+                            case "Địa Lý":
+                                img = R.drawable.georaphy;
+                                break;
+                            case "Lịch Sử":
+                                img = R.drawable.history;
+                                break;
+                            case "Văn Học":
+                                img = R.drawable.shakespeare;
+                                break;
+                            default:
+                                img = R.drawable.ic_launcher_foreground;
+                        }
+
+                        if (topic.equals(TOPIC))
+                        {
+                            QaA.add(new QuestionAndAnswer(content, baits, ans, img));
+                        }
+
+                    } catch (Exception e) {
+                        Toast.makeText(MainActivity.this, "data error", Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
                     }
 
-
-                    QaA.add(new QuestionAndAnswer(content, baits, ans, diff, img, isAnswered));
-
-                } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, "data error", Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
                 }
-
+            } catch (JSONException e) {
+                Toast.makeText(MainActivity.this, "parse error", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
             }
-        } catch (JSONException e) {
-            Toast.makeText(MainActivity.this, "parse error", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
+
+
         }
+        else {
+//            try {
+//                QaA = dbHelper.getAllQuestByTopic(TOPIC);
+//            }
+//            catch (Exception e) {
+//                e.printStackTrace();
+//                Toast.makeText(MainActivity.this, "already load error", Toast.LENGTH_SHORT).show();
+//            }
+        }
+
+
+
+
+
+
+
+
 
         try {
             db = dbHelper.getWritableDatabase();
@@ -303,6 +349,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void updatePoint(){
+        PlayerInfo PI = dbHelper.getAllPlayerStats();
+        Point.setText(""+PI.getStar());
+
+    }
+
 
     public void randomLoadQuest(List<Button> butt) {
         Random rand = new Random();
@@ -335,17 +387,44 @@ public class MainActivity extends AppCompatActivity {
             remain -= 1;
         }
         loaded_quest.add(quest_random);
-        if (loaded_quest.size() == QaA.size()){
+
+        if (loaded_quest.size() - 1 == QaA.size()){
+            String TOPIC = getIntent().getStringExtra("topic");
+            String pack = getIntent().getStringExtra("pack");
+            int PACK = Integer.parseInt(pack);
+
+            Level level = new Level(TOPIC,PACK);
+            level.setTotalPoint(getIntPoint());
+
+            level.setCorrectAnswers(correctAns);
+
+
+            PlayerInfo PI = dbHelper.getAllPlayerStats();
+            dbHelper.updatePlayerStats(PI.getName(),level.getTotalPoint(),PI.getLeveled() + 1, PACK);
+
             finish();
+
             Intent loading = new Intent(this,Loading.class);
+            loading.putExtra("outputTopic",TOPIC);
+            loading.putExtra("outputPoint",level.getTotalPoint());
+            loading.putExtra("outputCorrect",level.getCorrectAnswers());
+//            loading.putExtra("outputRate",RATE);
+            loading.putExtra("from","main");
+            //Star point
+            loading.putExtra("outputPack",pack);
             this.startActivity(loading);
         }
+
         quest_chosen = quest_random;
     }
 
 
     public void check(int quest_random, Button b) {
         if (pAns.equals(QaA.get(quest_random).getAnswer())) {
+            correctAns += 1;
+            addPoint(10);
+
+            QaA.get(quest_random).setAnswered("yes");
 
             Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bounce);
             b.startAnimation(anim);
@@ -356,6 +435,7 @@ public class MainActivity extends AppCompatActivity {
             progress_bar.cancelAnimation();
             progress_bar.clearAnimation();
         } else {
+            wrongAns +=1;
             Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.blink_anim);
             b.startAnimation(animation);
             b.setBackgroundColor(Color.parseColor("#e35242"));
@@ -363,6 +443,16 @@ public class MainActivity extends AppCompatActivity {
             incorrect.playAnimation();
 
         }
+    }
+
+    public void addPoint(int amount){
+        int currentPoint = Integer.parseInt(Point.getText().toString());
+        currentPoint+=amount;
+        Point.setText(""+currentPoint);
+    }
+
+    public int getIntPoint(){
+        return Integer.parseInt(Point.getText().toString());
     }
 
     public void buttonEffect() {

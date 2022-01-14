@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E2132"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_dia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="Hãy chọn gói câu hỏi ?"
+            android:textColor="@android:color/white"
+            android:textSize="34sp"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#1E2132"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/g5"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center|center_vertical"
+                android:layout_marginBottom="15dp"
+                android:background="@android:color/white"
+                android:backgroundTint="#FF43496E"
+                android:clickable="true"
+                android:text="5"
+                android:textColor="#0097A7"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/g10"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+
+                android:layout_gravity="center|center_vertical"
+                android:layout_marginBottom="15dp"
+                android:background="@android:color/white"
+                android:backgroundTint="#FF43496E"
+                android:clickable="true"
+                android:text="10"
+                android:textColor="#0097A7"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/g15"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+
+                android:layout_gravity="center|center_vertical"
+                android:layout_marginBottom="15dp"
+                android:background="@android:color/white"
+                android:backgroundTint="#FF43496E"
+                android:clickable="true"
+                android:text="15"
+                android:textColor="#0097A7"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

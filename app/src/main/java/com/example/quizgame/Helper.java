@@ -3,6 +3,7 @@ package com.example.quizgame;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -17,12 +18,10 @@ import java.util.List;
 
 public class Helper extends SQLiteOpenHelper {
 
-    String str_tblQuestions = "create table Quetions(id integer primary key autoincrement, content text not null, bait1 text,bait2 text,bait3 text,ans text not null, diff text not null, topic text);";
+    String str_tblQuestions = "create table Questions(id integer primary key autoincrement, content text not null, bait1 text,bait2 text,bait3 text,ans text not null,topic text, pass text);";
     String str_tblTopic = "create table Topic(id integer primary key autoincrement, topic text , star integer, percent integer);";
     String str_tblPlayer = "create table Player(id integer primary key autoincrement,name text not null,star integer,leveled integer, joindate text, questions integer, rate integer);";
 
-    Calendar calendar = Calendar.getInstance();
-    String currentMonthAndYear = "" + calendar.get(Calendar.MONTH) + " " + calendar.get(Calendar.YEAR);
 
     public Helper(@Nullable Context context, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, "database", factory, version);
@@ -34,25 +33,21 @@ public class Helper extends SQLiteOpenHelper {
         db.execSQL(str_tblTopic);
         db.execSQL(str_tblPlayer);
 
-//        if (getCountTopic("Địa Lý") <= 0) {
-//            db.execSQL("INSERT INTO Topic (topic) VALUES('Địa Lý');");
-//        }
-//        if (getCountTopic("Âm Nhạc") <= 0) {
-//            db.execSQL("INSERT INTO Topic (topic) VALUES('Âm Nhạc');");
-//        }
-//        if (getCountTopic("Lịch Sử") <= 0) {
-//            db.execSQL("INSERT INTO Topic (topic) VALUES('Lịch Sử');");
-//        }
-//        if (getCountTopic("Văn Hóa") <= 0) {
-//            db.execSQL("INSERT INTO Topic (topic) VALUES('Văn Hóa');");
-//        }
-//        if (getCountTopic("Ẩm Thực") <= 0) {
-//            db.execSQL("INSERT INTO Topic (topic) VALUES('Ẩm Thực');");
-//        }
+        if (isEmptyTopic()){
+            db.execSQL("INSERT INTO Topic (topic) VALUES('Địa Lý');");
+            db.execSQL("INSERT INTO Topic (topic) VALUES('Âm Nhạc');");
+            db.execSQL("INSERT INTO Topic (topic) VALUES('Lịch Sử');");
+            db.execSQL("INSERT INTO Topic (topic) VALUES('Văn Hóa');");
+            db.execSQL("INSERT INTO Topic (topic) VALUES('Ẩm Thực');");
+        }
 
-        db.execSQL("INSERT INTO Player (name, star, leveled, joindate, questions, rate) VALUES('You',1,1,'test',1,1);");
 
+//        if (isEmpty("Player")) {
+//            db.execSQL("INSERT INTO Player (name, star, leveled, joindate, questions, rate) VALUES('You',100,100, 'January 2022',100,100);");
+//        }
+//        db.execSQL("INSERT INTO Player (name, star, leveled, joindate, questions, rate) VALUES('You',100,100, 'January 2022',100,100);");
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -62,73 +57,111 @@ public class Helper extends SQLiteOpenHelper {
     public void updatePlayerStats(String name, int Star, int leveled, int questions) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
         contentValues.put("star", Star);
         contentValues.put("leveled", leveled);
         contentValues.put("questions", questions);
-
-        int rate = (readPercentByTopic("Địa Lý") + readPercentByTopic("Âm Nhạc") + readPercentByTopic("Lịch Sử")
-                + readPercentByTopic("Văn Hóa") + readPercentByTopic("Ẩm Thực")) / 5;
-
-        contentValues.put("rate", rate);
-        String whereClause = "id=?";
-        db.update("Topic", contentValues, whereClause, new String[]{"1"});
+//        int rate = (readPercentByTopic("Địa Lý") + readPercentByTopic("Âm Nhạc") + readPercentByTopic("Lịch Sử")
+//                + readPercentByTopic("Văn Hóa") + readPercentByTopic("Ẩm Thực")) / 5;
+//
+//        contentValues.put("rate", rate);
+        String whereClause = "name=?";
+        db.update("Player", contentValues, whereClause, new String[]{name});
         db.close();
     }
 
-    public PlayerInfo getAllPlayerStats(){
+    public PlayerInfo getAllPlayerStats() {
         SQLiteDatabase db = this.getReadableDatabase();
+        PlayerInfo playerInfo = new PlayerInfo();
         Cursor c = db.rawQuery("select * from Player", null);
         if (c.moveToFirst()) {
             while (!c.isAfterLast()) {
-                PlayerInfo playerInfo = new PlayerInfo(c.getInt(0),c.getString(1),c.getInt(2),c.getInt(3),c.getString(4),c.getInt(5),c.getInt(6));
-                System.out.println(c.getInt(0));
+                playerInfo.setName(c.getString(1));
+                playerInfo.setStar(c.getInt(2));
+                playerInfo.setLeveled(c.getInt(3));
+                playerInfo.setJoindate(c.getString(4));
+                playerInfo.setQuestionsAnswered(c.getInt(5));
+                playerInfo.setRate(c.getInt(6));
                 c.moveToNext();
                 return playerInfo;
             }
         }
         c.close();
-        return null;
+        return playerInfo;
     }
 
-
-
-    public void addStar(int starPoint){
-
-    }
-    public void addleveled(int levelesd){
-
-    }
-    public void addQuestionsAnswered(int amount){
-
-    }
-
-
-    public boolean havePlayer(String tableName){
-        SQLiteDatabase db = getWritableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + tableName,null);
-        return c.moveToFirst();
-    }
-
-
-    public int getCountTopic(String name) {
-        int count;
-        SQLiteDatabase db = getWritableDatabase();
-        String query = "select count(*) from Topic where topic =" + name;
-        Cursor c = db.rawQuery(query, null);
-        c.moveToFirst();
-        count = c.getInt(0);
-        if (!c.isClosed()) {
-            c.close();
+    public Topic getALlTopics() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Topic tp = new Topic();
+        Cursor c = db.rawQuery("select * from Topic", null);
+        if (c.moveToFirst()) {
+            while (!c.isAfterLast()) {
+                tp.setTopicName(c.getString(1));
+                tp.setStarGained(c.getInt(2));
+                c.moveToNext();
+                return tp;
+            }
         }
-        return count;
+        c.close();
+        return tp;
     }
 
-    public void updateTopicStarByTopic(String topic, int star, String percent) {
+    public Topic getTopicsByName(String TopicName) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Topic tp = new Topic();
+        Cursor c = db.rawQuery("select topic,star from Topic where topic= " + TopicName + "", null);
+        if (c.moveToFirst()) {
+            while (!c.isAfterLast()) {
+                tp.setTopicName(c.getString(0));
+                tp.setStarGained(c.getInt(1));
+                c.moveToNext();
+                return tp;
+            }
+        }
+        c.close();
+        return tp;
+    }
+
+
+    public void addStar(int starPoint) {
+
+    }
+
+    public void addleveled(int levelesd) {
+
+    }
+
+    public void addQuestionsAnswered(int amount) {
+
+    }
+
+
+    public boolean havePlayer(String tableName) {
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor c = db.rawQuery("SELECT count(*) FROM " + tableName, null);
+        if (c.moveToFirst()) {
+            while (!c.isAfterLast()) {
+                c.moveToNext();
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean isEmptyTopic() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String count = "SELECT count(*) FROM Topic";
+        Cursor mcursor = db.rawQuery(count, null);
+        mcursor.moveToFirst();
+        int icount = mcursor.getInt(0);
+        if (icount > 0) return false;
+        else return true;
+    }
+
+    public void updateTopicStarByTopic(String topic, int star) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("star", star);
-        contentValues.put("percent", percent);
         String whereClause = "topic=?";
         db.update("Topic", contentValues, whereClause, new String[]{topic});
         db.close();
@@ -150,7 +183,7 @@ public class Helper extends SQLiteOpenHelper {
         return percent;
     }
 
-    public void addQuestion(String Question, String bait1, String bait2, String bait3, String ans, String diff) {
+    public void addQuestion(String Question, String bait1, String bait2, String bait3, String ans, String topic, String pass) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("content", Question);
@@ -158,29 +191,32 @@ public class Helper extends SQLiteOpenHelper {
         contentValues.put("bait2", bait2);
         contentValues.put("bait3", bait3);
         contentValues.put("ans", ans);
-        contentValues.put("diff", diff);
-        db.insert("Quetions", null, contentValues);
+        contentValues.put("topic", topic);
+        contentValues.put("pass", pass);
+        db.insert("Questions", null, contentValues);
         db.close();
     }
 
-    public String readQuestion(String id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "select content from Quetions where id =" + id;
-        String currentQuestion = "";
-        Cursor c = db.rawQuery(query, null);
-        if (c.moveToFirst()) {
-            while (!c.isAfterLast()) {
-                currentQuestion += c.getString(0);
-                c.moveToNext();
-            }
-        }
-        c.close();
-        return currentQuestion;
-    }
+//    public List<QuestionAndAnswer> getAllQuestByTopic(String TopicName) {
+//        List<QuestionAndAnswer> arr = new ArrayList<QuestionAndAnswer>();
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        String query = "select content,bait1,bait2,bait3,ans,pass from Questions where pass = 'no' and topic =" + TopicName;
+//        String currentQuestions = "";
+//        Cursor c = db.rawQuery(query, null);
+//        if (c.moveToFirst()) {
+//            while (!c.isAfterLast()) {
+//                String[] baits = {c.getString(2),c.getString(3),c.getString(4)};
+//                arr.add(new QuestionAndAnswer(c.getString(1),baits,c.getString(5),c.getString(6)));
+//                c.moveToNext();
+//            }
+//        }
+//        c.close();
+//        return arr;
+//    }
 
     public String ReadAllQuestion() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "select content from Quetions";
+        String query = "select content from Questions";
         String allQuestions = "";
         Cursor c = db.rawQuery(query, null);
         if (c.moveToFirst()) {
@@ -202,7 +238,19 @@ public class Helper extends SQLiteOpenHelper {
 
     public void DeleteAllQuestion() {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("delete from Quetions");
+        db.execSQL("delete from Questions");
         db.close();
+    }
+
+    public boolean isEmpty(String TableName) {
+
+        SQLiteDatabase database = this.getReadableDatabase();
+        long NoOfRows = DatabaseUtils.queryNumEntries(database, TableName);
+
+        if (NoOfRows == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

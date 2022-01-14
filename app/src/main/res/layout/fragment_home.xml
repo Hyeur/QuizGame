@@ -28,7 +28,7 @@
             tools:src="@drawable/hh" />
 
         <TextView
-            android:id="@+id/textViewJoinDate"
+            android:id="@+id/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="U"
@@ -284,7 +284,7 @@
                     android:orientation="horizontal">
 
                     <FrameLayout
-                        android:id="@+id/button9"
+                        android:id="@+id/Food"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_margin="3dp"

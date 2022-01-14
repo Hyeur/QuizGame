@@ -1,7 +1,6 @@
 package com.example.quizgame;
 
 public class QuestionAndAnswer {
-    private String difficulty;
     private String topic;
     private int point;
     private String question;
@@ -9,30 +8,37 @@ public class QuestionAndAnswer {
     private String answer;
     private float speed;
     private int imgDescription;
-    private boolean answered;
+    private String answered;
 
 
     public QuestionAndAnswer() {
     }
 
-    public QuestionAndAnswer(String question, String[] baits, String answer, String difficulty) {
-        this.difficulty = difficulty;
+
+
+
+    public QuestionAndAnswer(String question, String[] baits, String answer) {
         this.question = question;
         this.baits = baits;
         this.answer = answer;
     }
 
-    public QuestionAndAnswer(String question, String[] baits, String answer, String difficulty,int imgDescription, boolean answered) {
-        this.difficulty = difficulty;
+    public QuestionAndAnswer(String question, String[] baits, String answer,int imgDescription) {
         this.question = question;
         this.baits = baits;
         this.answer = answer;
         this.imgDescription = imgDescription;
+    }
+
+    public QuestionAndAnswer(String topic, String question, String[] baits, String answer, String answered) {
+        this.topic = topic;
+        this.question = question;
+        this.baits = baits;
+        this.answer = answer;
         this.answered = answered;
     }
 
-    public QuestionAndAnswer(String difficulty, String topic, int point, String question, String[] baits, String answer, float speed, int imgDescription) {
-        this.difficulty = difficulty;
+    public QuestionAndAnswer(String topic, int point, String question, String[] baits, String answer, float speed, int imgDescription) {
         this.topic = topic;
         this.point = point;
         this.question = question;
@@ -42,20 +48,12 @@ public class QuestionAndAnswer {
         this.imgDescription = imgDescription;
     }
 
-    public boolean isAnswered() {
+    public String getAnswered() {
         return answered;
     }
 
-    public void setAnswered(boolean answered) {
+    public void setAnswered(String answered) {
         this.answered = answered;
-    }
-
-    public String getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
     }
 
     public String getTopic() {
