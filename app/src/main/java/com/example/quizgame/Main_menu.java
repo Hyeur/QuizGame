@@ -12,8 +12,12 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -66,43 +70,13 @@ public class Main_menu extends AppCompatActivity {
 
 
 
-        try {
-
-            PlayerInfo PI = dbHelper.getAllPlayerStats();
-            Topic TP1 = dbHelper.getTopicsByName("Địa Lý");
-            Topic TP2 = dbHelper.getTopicsByName("Âm Nhạc");
-            Topic TP3 = dbHelper.getTopicsByName("Lịch Sử");
-            Topic TP4 = dbHelper.getTopicsByName("Văn Hóa");
-            Topic TP5 = dbHelper.getTopicsByName("Ẩm Thực");
-            config_getPlayerStats(PI);
-
-            config_getAllTopicStasts(TP1,TP2,TP3,TP4,TP5);
-
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-            Toast.makeText(Main_menu.this,"Main_menu error",Toast.LENGTH_SHORT).show();
-        }
-
-
+    }
+    public void tapSound(Context context) {
+        MediaPlayer mp = MediaPlayer.create(context, R.raw.correct_answer_sound_effect);
+        mp.setVolume(200,200);
+        mp.start();
     }
 
-    private void config_getAllTopicStasts(Topic tp1,Topic tp2,Topic tp3,Topic tp4,Topic tp5) {
-        DIA_LY_SCORE = tp1.getStarGained();
-        AM_NHAC_SCORE = tp2.getStarGained();
-        LICH_SU_SCORE = tp3.getStarGained();
-        VAN_HOA_SCORE = tp4.getStarGained();
-        AM_THUC_SCORE = tp5.getStarGained();
-    }
 
-    public void config_getPlayerStats(PlayerInfo PI){
-        PLAYER_NAME = PI.getName();
-        PLAYER_STAR = PI.getStar();
-        LEVEL_COMPLETED = PI.getLeveled();
-        JOIN_DATE = PI.getJoindate();
-        QUESTION_ANSWERED = PI.getQuestionsAnswered();
-        RATE = PI.getRate();
-
-    }
 
 }

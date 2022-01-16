@@ -1,6 +1,10 @@
 package com.example.quizgame;
 
+import android.database.sqlite.SQLiteDatabase;
+
 public class config {
+
+
     public static String PLAYER_NAME = "You";
     public static int PLAYER_STAR = 1;
     public static int LEVEL_COMPLETED = 1;
@@ -13,4 +17,6 @@ public class config {
     public static int LICH_SU_SCORE = 3;
     public static int VAN_HOA_SCORE = 4;
     public static int AM_THUC_SCORE = 5;
+
+    public static final String CONTACTS_COLUMN_NAME = "name";
 }

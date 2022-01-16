@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Loading">
+    tools:context=".GameStarting">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView7"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="TODO"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/background_with_logo"
-        tools:srcCompat="@drawable/background_final" />
+        android:src="@drawable/background_with_logo"
+        app:srcCompat="@drawable/background_with_logo" />
 </RelativeLayout>

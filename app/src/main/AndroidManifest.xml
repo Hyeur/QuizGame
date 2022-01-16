@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".Main_menu"
+            android:exported="true" />
+        <activity
             android:name=".Dialog"
             android:exported="true" />
         <activity
             android:name=".Loading"
             android:exported="true" />
         <activity
-            android:name=".Main_menu"
+            android:name=".GameStarting"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

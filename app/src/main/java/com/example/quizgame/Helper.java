@@ -1,11 +1,14 @@
 package com.example.quizgame;
 
+import static com.example.quizgame.config.PLAYER_NAME;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -33,19 +36,15 @@ public class Helper extends SQLiteOpenHelper {
         db.execSQL(str_tblTopic);
         db.execSQL(str_tblPlayer);
 
-        if (isEmptyTopic()){
-            db.execSQL("INSERT INTO Topic (topic) VALUES('Địa Lý');");
-            db.execSQL("INSERT INTO Topic (topic) VALUES('Âm Nhạc');");
-            db.execSQL("INSERT INTO Topic (topic) VALUES('Lịch Sử');");
-            db.execSQL("INSERT INTO Topic (topic) VALUES('Văn Hóa');");
-            db.execSQL("INSERT INTO Topic (topic) VALUES('Ẩm Thực');");
-        }
-
-
-//        if (isEmpty("Player")) {
-//            db.execSQL("INSERT INTO Player (name, star, leveled, joindate, questions, rate) VALUES('You',100,100, 'January 2022',100,100);");
+//        if (isEmptyTopic()){
+//            db.execSQL("INSERT INTO Topic (topic) VALUES('Địa Lý');");
+//            db.execSQL("INSERT INTO Topic (topic) VALUES('Âm Nhạc');");
+//            db.execSQL("INSERT INTO Topic (topic) VALUES('Lịch Sử');");
+//            db.execSQL("INSERT INTO Topic (topic) VALUES('Văn Hóa');");
+//            db.execSQL("INSERT INTO Topic (topic) VALUES('Ẩm Thực');");
 //        }
-//        db.execSQL("INSERT INTO Player (name, star, leveled, joindate, questions, rate) VALUES('You',100,100, 'January 2022',100,100);");
+
+        db.execSQL("INSERT INTO Player (name, star, leveled, joindate, questions, rate) VALUES('You',100,100, 'January 2022',100,100);");
     }
 
 
@@ -54,7 +53,7 @@ public class Helper extends SQLiteOpenHelper {
 
     }
 
-    public void updatePlayerStats(String name, int Star, int leveled, int questions) {
+    public void updatePlayerStats(int Star, int leveled, int questions) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("star", Star);
@@ -64,15 +63,15 @@ public class Helper extends SQLiteOpenHelper {
 //                + readPercentByTopic("Văn Hóa") + readPercentByTopic("Ẩm Thực")) / 5;
 //
 //        contentValues.put("rate", rate);
-        String whereClause = "name=?";
-        db.update("Player", contentValues, whereClause, new String[]{name});
+        String whereClause = "id=?";
+        db.update("Player", contentValues, whereClause, new String[]{"1"});
         db.close();
     }
 
     public PlayerInfo getAllPlayerStats() {
         SQLiteDatabase db = this.getReadableDatabase();
         PlayerInfo playerInfo = new PlayerInfo();
-        Cursor c = db.rawQuery("select * from Player", null);
+        Cursor c = db.rawQuery("select * from Player where id = 1", null);
         if (c.moveToFirst()) {
             while (!c.isAfterLast()) {
                 playerInfo.setName(c.getString(1));
@@ -134,18 +133,6 @@ public class Helper extends SQLiteOpenHelper {
 
     }
 
-
-    public boolean havePlayer(String tableName) {
-        SQLiteDatabase db = getWritableDatabase();
-        Cursor c = db.rawQuery("SELECT count(*) FROM " + tableName, null);
-        if (c.moveToFirst()) {
-            while (!c.isAfterLast()) {
-                c.moveToNext();
-                return true;
-            }
-        }
-        return false;
-    }
 
 
     public boolean isEmptyTopic() {

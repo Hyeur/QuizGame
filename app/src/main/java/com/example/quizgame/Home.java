@@ -8,8 +8,10 @@ import static com.example.quizgame.config.PLAYER_NAME;
 import static com.example.quizgame.config.PLAYER_STAR;
 import static com.example.quizgame.config.VAN_HOA_SCORE;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -52,8 +54,6 @@ public class Home extends Fragment{
     TextView name;
     TextView point;
 
-    Helper dbHelper = new Helper(getActivity(), null, 1);
-    SQLiteDatabase db;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -113,12 +113,13 @@ public class Home extends Fragment{
         progress3 = view.findViewById(R.id.progress3);
         progress4 = view.findViewById(R.id.progress4);
         progress5 = view.findViewById(R.id.progress5);
-        name = view.findViewById(R.id.textViewEditableName);
+        name = view.findViewById(R.id.textViewName);
         point = view.findViewById(R.id.textViewStarPointHome);
 
         Geo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent pack = new Intent(getActivity(), Dialog.class);
                 pack.putExtra("topic","Địa Lý");
                 startActivity(pack);
@@ -159,15 +160,14 @@ public class Home extends Fragment{
 
 
         try {
-
             progress1.setText(DIA_LY_SCORE + "/15");
             progress2.setText(AM_NHAC_SCORE + "/15");
             progress3.setText(LICH_SU_SCORE + "/15");
             progress4.setText(VAN_HOA_SCORE + "/15");
             progress5.setText(AM_THUC_SCORE + "/15");
 
-            name.setText(PLAYER_NAME +"");
-            point.setText(PLAYER_STAR+ "");
+            name.setText(PLAYER_NAME);
+            point.setText(PLAYER_STAR+"");
 
         }
         catch (Exception e) {
@@ -175,9 +175,9 @@ public class Home extends Fragment{
             Toast.makeText(getActivity(),"gain error",Toast.LENGTH_SHORT).show();
         }
 
-
         return view;
     }
+
 
 
 

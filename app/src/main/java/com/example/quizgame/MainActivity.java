@@ -32,6 +32,17 @@ import java.util.List;
 import java.util.Random;
 import java.util.Stack;
 import java.util.concurrent.TimeUnit;
+import static com.example.quizgame.config.AM_NHAC_SCORE;
+import static com.example.quizgame.config.AM_THUC_SCORE;
+import static com.example.quizgame.config.DIA_LY_SCORE;
+import static com.example.quizgame.config.JOIN_DATE;
+import static com.example.quizgame.config.LEVEL_COMPLETED;
+import static com.example.quizgame.config.LICH_SU_SCORE;
+import static com.example.quizgame.config.PLAYER_NAME;
+import static com.example.quizgame.config.PLAYER_STAR;
+import static com.example.quizgame.config.QUESTION_ANSWERED;
+import static com.example.quizgame.config.RATE;
+import static com.example.quizgame.config.VAN_HOA_SCORE;
 
 import org.json.*;
 
@@ -59,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
     int wrongAns = 0;
     int correctAns = 0;
+    int QuestMount = 0;
 
 
 
@@ -110,11 +122,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {
+
             updatePoint();
         }
         catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(MainActivity.this,"PI error",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,PLAYER_STAR,Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"updatePoint error",Toast.LENGTH_SHORT).show();
         }
 
 
@@ -180,8 +194,10 @@ public class MainActivity extends AppCompatActivity {
                                 img = R.drawable.ic_launcher_foreground;
                         }
 
-                        if (topic.equals(TOPIC))
+
+                        if (topic.equals(TOPIC) && QuestMount < PACK)
                         {
+                            QuestMount+=1;
                             QaA.add(new QuestionAndAnswer(content, baits, ans, img));
                         }
 
@@ -198,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
-        else {
+//        else {
 //            try {
 //                QaA = dbHelper.getAllQuestByTopic(TOPIC);
 //            }
@@ -206,13 +222,7 @@ public class MainActivity extends AppCompatActivity {
 //                e.printStackTrace();
 //                Toast.makeText(MainActivity.this, "already load error", Toast.LENGTH_SHORT).show();
 //            }
-        }
-
-
-
-
-
-
+//        }
 
 
 
@@ -351,8 +361,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void updatePoint(){
         PlayerInfo PI = dbHelper.getAllPlayerStats();
-        Point.setText(""+PI.getStar());
-
+        Point.setText(PLAYER_STAR+"");
     }
 
 
@@ -400,14 +409,13 @@ public class MainActivity extends AppCompatActivity {
 
 
             PlayerInfo PI = dbHelper.getAllPlayerStats();
-            dbHelper.updatePlayerStats(PI.getName(),level.getTotalPoint(),PI.getLeveled() + 1, PACK);
+            dbHelper.updatePlayerStats(level.getTotalPoint(),PI.getLeveled() + 1, PACK);
 
             finish();
 
             Intent loading = new Intent(this,Loading.class);
             loading.putExtra("outputTopic",TOPIC);
             loading.putExtra("outputPoint",level.getTotalPoint());
-            loading.putExtra("outputCorrect",level.getCorrectAnswers());
 //            loading.putExtra("outputRate",RATE);
             loading.putExtra("from","main");
             //Star point

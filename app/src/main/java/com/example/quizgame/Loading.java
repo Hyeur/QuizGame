@@ -30,11 +30,8 @@ public class Loading extends AppCompatActivity {
 
         String topic = getIntent().getStringExtra("topic");
         String pack = getIntent().getStringExtra("pack");
-        String TOPIC = getIntent().getStringExtra("outputTopic");
-        String PACK = getIntent().getStringExtra("outputPack");
         String main = getIntent().getStringExtra("from");
-        int Point = Integer.parseInt(getIntent().getStringExtra("outputPoint")) ;
-        String correctAns = getIntent().getStringExtra("outputCorrect");
+
 
         CountDownTimer Timer = new CountDownTimer(1500, 1000) {
             public void onTick(long millisUntilFinished) {
@@ -44,25 +41,29 @@ public class Loading extends AppCompatActivity {
             public void onFinish() {
 
                 if (main != null){
+                    String TOPIC = getIntent().getStringExtra("outputTopic");
+                    String PACK = getIntent().getStringExtra("outputPack");
+                    int Point = getIntent().getIntExtra("outputPoint",0);
+                    int correctAns = getIntent().getIntExtra("outputCorrect",0);
                     Intent save = new Intent(Loading.this,Main_menu.class);
 
-                    dbHelper.updateTopicStarByTopic(TOPIC,Integer.parseInt(correctAns));
+                    dbHelper.updateTopicStarByTopic(TOPIC,correctAns);
                     PLAYER_STAR = Point;
                     switch (TOPIC) {
                         case "Địa Lý":
-                            DIA_LY_SCORE = Integer.parseInt(correctAns);
+                            DIA_LY_SCORE = correctAns;
                             break;
                         case "Âm Nhạc":
-                            AM_NHAC_SCORE = Integer.parseInt(correctAns);
+                            AM_NHAC_SCORE = correctAns;
                             break;
                         case "Lịch Sử":
-                            LICH_SU_SCORE = Integer.parseInt(correctAns);
+                            LICH_SU_SCORE = correctAns;
                             break;
                         case "Văn Hóa":
-                            VAN_HOA_SCORE = Integer.parseInt(correctAns);
+                            VAN_HOA_SCORE = correctAns;
                             break;
                         case "Ẩm Thực":
-                            AM_THUC_SCORE = Integer.parseInt(correctAns);
+                            AM_THUC_SCORE = correctAns;
                             break;
                     }
                     finish();
