@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="188dp"
-            android:text="Quizz Game"
+            android:text="Quiz Game"
             android:textColor="#FFFFFF"
             android:textSize="34sp"
             android:textStyle="bold"
@@ -66,7 +66,7 @@
                     android:orientation="horizontal">
 
                     <FrameLayout
-                        android:id="@+id/button"
+                        android:id="@+id/Sound"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_margin="3dp"
@@ -75,6 +75,7 @@
                         android:backgroundTint="#95CAD6"
                         android:textAlignment="gravity"
                         android:textColor="#E3D8D8"
+                        android:soundEffectsEnabled="false"
                         android:textSize="16sp">
 
                         <ImageView
@@ -98,7 +99,7 @@
                     </FrameLayout>
 
                     <FrameLayout
-                        android:id="@+id/button2"
+                        android:id="@+id/Music"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_margin="3dp"
@@ -107,6 +108,7 @@
                         android:backgroundTint="#E18BD5"
                         android:textAlignment="gravity"
                         android:textColor="#E3D8D8"
+                        android:soundEffectsEnabled="false"
                         android:textSize="16sp">
 
                         <ImageView
@@ -125,14 +127,14 @@
                             android:layout_gravity="bottom"
                             android:layout_marginLeft="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Ẩm Thực"
+                            android:text="Music"
                             android:textColor="#F1EAEA"
                             android:textSize="16sp" />
                     </FrameLayout>
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/exit"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_margin="3dp"
@@ -146,6 +148,7 @@
                     android:textAlignment="gravity"
                     android:textAllCaps="false"
                     android:textColor="#E3D8D8"
+                    android:soundEffectsEnabled="false"
                     android:textSize="16sp" />
             </LinearLayout>
         </ScrollView>

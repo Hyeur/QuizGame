@@ -14,11 +14,13 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,7 +51,7 @@ public class Main_menu extends AppCompatActivity {
     Helper dbHelper = new Helper(Main_menu.this, null, 1);
     SQLiteDatabase db;
 
-
+    private SoundManager mSoundManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +61,10 @@ public class Main_menu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
 
 
-
-
+        mSoundManager = new SoundManager();
+        mSoundManager.initSounds(getBaseContext());
+        mSoundManager.addSound(1, R.raw.touchsound);
+        mSoundManager.addSound(2, R.raw.unta);
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -69,6 +73,10 @@ public class Main_menu extends AppCompatActivity {
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
 
+        String done = getIntent().getStringExtra("done");
+        if (done != null) {
+            Toast.makeText(this,"Bạn đã hoàn thành hết câu đó",Toast.LENGTH_LONG).show();
+        }
 
     }
     public void tapSound(Context context) {
@@ -76,7 +84,6 @@ public class Main_menu extends AppCompatActivity {
         mp.setVolume(200,200);
         mp.start();
     }
-
 
 
 }

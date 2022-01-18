@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.WindowManager;
@@ -34,6 +36,7 @@ public class GameStarting extends AppCompatActivity {
         setContentView(R.layout.activity_game_starting);
 
 
+
         try {
 
             PlayerInfo PI = new PlayerInfo();
@@ -46,11 +49,14 @@ public class GameStarting extends AppCompatActivity {
         }
 
         try {
-            Topic TP1 = dbHelper.getTopicsByName("Địa Lý");
-            Topic TP2 = dbHelper.getTopicsByName("Âm Nhạc");
-            Topic TP3 = dbHelper.getTopicsByName("Lịch Sử");
-            Topic TP4 = dbHelper.getTopicsByName("Văn Hóa");
-            Topic TP5 = dbHelper.getTopicsByName("Ẩm Thực");
+            Topic TP1,TP2,TP3,TP4,TP5 = new Topic();
+
+            TP1 = dbHelper.getTopicsById("1");
+            TP2 = dbHelper.getTopicsById("2");
+            TP3 = dbHelper.getTopicsById("3");
+            TP4 = dbHelper.getTopicsById("4");
+            TP5 = dbHelper.getTopicsById("5");
+
 
             config_getAllTopicStasts(TP1,TP2,TP3,TP4,TP5);
 

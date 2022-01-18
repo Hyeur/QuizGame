@@ -36,13 +36,13 @@ public class Helper extends SQLiteOpenHelper {
         db.execSQL(str_tblTopic);
         db.execSQL(str_tblPlayer);
 
-//        if (isEmptyTopic()){
-//            db.execSQL("INSERT INTO Topic (topic) VALUES('Địa Lý');");
-//            db.execSQL("INSERT INTO Topic (topic) VALUES('Âm Nhạc');");
-//            db.execSQL("INSERT INTO Topic (topic) VALUES('Lịch Sử');");
-//            db.execSQL("INSERT INTO Topic (topic) VALUES('Văn Hóa');");
-//            db.execSQL("INSERT INTO Topic (topic) VALUES('Ẩm Thực');");
-//        }
+
+        db.execSQL("INSERT INTO Topic (topic,star) VALUES('Địa Lý',0);");
+        db.execSQL("INSERT INTO Topic (topic,star) VALUES('Âm Nhạc',0);");
+        db.execSQL("INSERT INTO Topic (topic,star) VALUES('Lịch Sử',0);");
+        db.execSQL("INSERT INTO Topic (topic,star) VALUES('Văn Hóa',0);");
+        db.execSQL("INSERT INTO Topic (topic,star) VALUES('Ẩm Thực',0);");
+
 
         db.execSQL("INSERT INTO Player (name, star, leveled, joindate, questions, rate) VALUES('You',100,100, 'January 2022',100,100);");
     }
@@ -104,10 +104,10 @@ public class Helper extends SQLiteOpenHelper {
         return tp;
     }
 
-    public Topic getTopicsByName(String TopicName) {
+    public Topic getTopicsById(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Topic tp = new Topic();
-        Cursor c = db.rawQuery("select topic,star from Topic where topic= " + TopicName + "", null);
+        Cursor c = db.rawQuery("select topic,star from Topic where id= "+ id, null);
         if (c.moveToFirst()) {
             while (!c.isAfterLast()) {
                 tp.setTopicName(c.getString(0));
@@ -118,6 +118,38 @@ public class Helper extends SQLiteOpenHelper {
         }
         c.close();
         return tp;
+    }
+    public int getCountAnsweredByTopicName(String TopicName) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int id;
+        switch (TopicName) {
+            case "Địa Lý":
+                id = 1;
+                break;
+            case "Âm Nhạc":
+                id = 2;
+                break;
+            case "Lịch Sử":
+                id = 3;
+                break;
+            case "Văn Hóa":
+                id = 4;
+                break;
+            case "Ẩm Thực":
+                id = 5;
+                break;
+            default: id = 0;
+        }
+        int result = 0;
+        Cursor c = db.rawQuery("select topic from Questions where pass= 'yes' and id= "+ id , null);
+        if (c.moveToFirst()) {
+            while (!c.isAfterLast()) {
+                result += 1;
+                c.moveToNext();
+            }
+        }
+        c.close();
+        return result;
     }
 
 
@@ -155,6 +187,7 @@ public class Helper extends SQLiteOpenHelper {
     }
 
 
+
     public int readPercentByTopic(String inputTopic) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "select percent from Topic where topic =" + inputTopic;
@@ -184,6 +217,14 @@ public class Helper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void passedQuestion(String question){
+        SQLiteDatabase db = getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("pass","yes");
+        String whereClause = "content=?";
+        db.update("Questions",contentValues,whereClause,new String[]{question});
+        db.close();
+    }
 //    public List<QuestionAndAnswer> getAllQuestByTopic(String TopicName) {
 //        List<QuestionAndAnswer> arr = new ArrayList<QuestionAndAnswer>();
 //        SQLiteDatabase db = this.getWritableDatabase();
@@ -201,19 +242,20 @@ public class Helper extends SQLiteOpenHelper {
 //        return arr;
 //    }
 
-    public String ReadAllQuestion() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "select content from Questions";
-        String allQuestions = "";
+    public List<QuestionAndAnswer> getAllNewQuestions(String TopicName) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<QuestionAndAnswer> QA = new ArrayList<QuestionAndAnswer>();
+        String query = "select content,bait1,bait2,bait3,ans from Questions where topic=" + TopicName;
         Cursor c = db.rawQuery(query, null);
         if (c.moveToFirst()) {
             while (!c.isAfterLast()) {
-                allQuestions += c.getString(0);
+                String[] baits = {c.getString(1),c.getString(2),c.getString(3)};
+                QA.add(new QuestionAndAnswer(c.getString(0),baits,c.getString(4)));
                 c.moveToNext();
             }
         }
         c.close();
-        return allQuestions;
+        return QA;
     }
 
     public void DeleteQuestionById(int id) {

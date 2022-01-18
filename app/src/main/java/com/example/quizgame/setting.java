@@ -1,5 +1,7 @@
 package com.example.quizgame;
 
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +18,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class setting extends Fragment {
+
+    FrameLayout sound;
+    FrameLayout music;
+    Button exit;
+    MediaPlayer mp;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,7 +67,27 @@ public class setting extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view2 = inflater.inflate(R.layout.fragment_setting, container, false);
+
+        sound = view2.findViewById(R.id.Sound);
+        music = view2.findViewById(R.id.Music);
+        exit = view2.findViewById(R.id.exit);
+
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finishAffinity();
+            }
+        });
+
+        music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false);
+        return view2;
     }
 }

@@ -31,6 +31,7 @@ public class Loading extends AppCompatActivity {
         String topic = getIntent().getStringExtra("topic");
         String pack = getIntent().getStringExtra("pack");
         String main = getIntent().getStringExtra("from");
+        String done = getIntent().getStringExtra("done");
 
 
         CountDownTimer Timer = new CountDownTimer(1500, 1000) {
@@ -47,7 +48,6 @@ public class Loading extends AppCompatActivity {
                     int correctAns = getIntent().getIntExtra("outputCorrect",0);
                     Intent save = new Intent(Loading.this,Main_menu.class);
 
-                    dbHelper.updateTopicStarByTopic(TOPIC,correctAns);
                     PLAYER_STAR = Point;
                     switch (TOPIC) {
                         case "Địa Lý":
@@ -66,6 +66,15 @@ public class Loading extends AppCompatActivity {
                             AM_THUC_SCORE = correctAns;
                             break;
                     }
+                    if (done != null) {
+                        save.putExtra("done","done");
+                    }
+
+
+                    int star = dbHelper.getCountAnsweredByTopicName(TOPIC);
+                    dbHelper.updateTopicStarByTopic(TOPIC,star);
+
+
                     finish();
                     startActivity(save);
 

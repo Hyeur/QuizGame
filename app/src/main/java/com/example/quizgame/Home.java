@@ -11,7 +11,9 @@ import static com.example.quizgame.config.VAN_HOA_SCORE;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -54,6 +56,9 @@ public class Home extends Fragment{
     TextView name;
     TextView point;
 
+    SoundPool sp;
+
+    private SoundManager mSoundManager;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -116,10 +121,20 @@ public class Home extends Fragment{
         name = view.findViewById(R.id.textViewName);
         point = view.findViewById(R.id.textViewStarPointHome);
 
+
+        mSoundManager = new SoundManager();
+        mSoundManager.initSounds(getContext());
+        mSoundManager.addSound(1, R.raw.touchsound);
+        mSoundManager.addSound(2, R.raw.unta);
+
+        mSoundManager.playSound(2);
+
+
         Geo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                mSoundManager.playSound(1);
                 Intent pack = new Intent(getActivity(), Dialog.class);
                 pack.putExtra("topic","Địa Lý");
                 startActivity(pack);
@@ -128,6 +143,8 @@ public class Home extends Fragment{
         Music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mSoundManager.playSound(1);
+
                 Intent pack = new Intent(getActivity(), Dialog.class);
                 pack.putExtra("topic","Âm Nhạc");
                 startActivity(pack);
@@ -136,6 +153,7 @@ public class Home extends Fragment{
         History.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mSoundManager.playSound(1);
                 Intent pack = new Intent(getActivity(), Dialog.class);
                 pack.putExtra("topic","Lịch Sử");
                 startActivity(pack);
@@ -144,6 +162,7 @@ public class Home extends Fragment{
         Literature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mSoundManager.playSound(1);
                 Intent pack = new Intent(getActivity(), Dialog.class);
                 pack.putExtra("topic","Văn Hóa");
                 startActivity(pack);
@@ -152,6 +171,7 @@ public class Home extends Fragment{
         Food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mSoundManager.playSound(1);
                 Intent pack = new Intent(getActivity(), Dialog.class);
                 pack.putExtra("topic","Ẩm Thực");
                 startActivity(pack);
